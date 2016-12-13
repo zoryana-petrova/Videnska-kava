@@ -1,6 +1,7 @@
+/*---------contacts menu-------*/
 $(function() {
    $("#contacts").mmenu({
-
+      extensions : [ 'widescreen', 'theme-white', 'effect-menu-slide', 'pagedim-black' ],
       "offCanvas":{
          "position": "right"
       },
@@ -8,14 +9,29 @@ $(function() {
          title:       "Контакты"
       }
    });
-   // var API = $("#contacts").data("mmenu");
-
-   // $("#contacts__toggle").click(function() {
-      // API.open();
-   // });
 });
 
-
+/*---------filter menu-------*/
+$(function() {
+   $("#filter__content").mmenu({
+   		extensions : [ 'widescreen', 'theme-white', 'effect-menu-slide', 'pagedim-black' ],
+   		slidingSubmenus: false,
+      "offCanvas":{
+         "position": "left"
+      },
+      navbar:{
+        title:   "Фильтры"
+      }
+   }, {
+	   // configuration
+	   clone: true
+	});
+   
+   	var API = $("#mm-filter__content").data("mmenu");
+   	$(".filter__open_btn").click(function() {
+		API.open();
+	});
+});
 
 // Footer bottom
 function footerToBottom() {
@@ -174,6 +190,86 @@ $(window).on('scroll', function () {
 });
 
 
+var sliderWidget = (function(){
+
+    var $sliders = null;
+
+    return {
+        init: function($elems){
+            // Store all initialized sliders
+            $sliders = $elems;
+
+            $sliders.each(function(){
+                var $this = $(this),
+                    min = parseInt($this.data("min")),
+                    max = parseInt($this.data("max")),
+                    container = $this.closest(".filter__slider"),
+                    fromField = container.find(".filter__slider-input_from"),
+                    toField = container.find(".filter__slider-input_to");
+
+                fromField.on('change', function(){
+                    $this.slider('values', 0, fromField.val())
+                });
+
+                toField.on('change', function(){
+                    $this.slider('values', 1, toField.val())
+                });
+
+                $this.slider({
+                    range: true,
+                    min: min,
+                    max: max,
+                    values: [min, max],
+                    slide: function(evt, ui) {
+                        fromField.val(ui.values[0]);
+                        toField.val(ui.values[1])
+                    },
+                    create: function() {
+                        fromField.val(min);
+                        toField.val(max)
+                    }
+                });
+            })
+        },
+
+        reset: function(){
+            $sliders.each(function(){
+                var $this = $(this),
+                    min = parseInt($this.data("min")),
+                    max = parseInt($this.data("max")),
+                    container = $this.closest(".filter__slider"),
+                    fromField = container.find(".filter__slider-input_from"),
+                    toField = container.find(".filter__slider-input_to");
+
+                $this.slider({
+                    values: [min, max]
+                });
+
+                fromField.val(min);
+                toField.val(max);
+            })
+        }
+    }
+}());
+
+
+$(document).ready(function (){
+       /* Init Price Slider */
+    var $sliders = $(".filter__slider-element"); 
+    if ($sliders.length){
+        sliderWidget.init($sliders);
+    }
+    $(".filter__reset").on("click", function(e){
+        var $this = $(this),
+            container = $this.closest("#mm-filter__content").find(".filter__group"),
+            checkboxes = container.find("input:checkbox");
+
+        checkboxes.removeAttr("checked");
+        sliderWidget.reset();
+
+        return false;
+    });
+});
 
  
 $(function () { 
@@ -303,7 +399,6 @@ $(function () {
         ]
     }
     $('#best-price-all').slick(bestPriceAllSlickOpts);
-        
 });
 
 $(function () { 
@@ -489,7 +584,64 @@ $(window).load(function() {
       $(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
       });
 })
-
+$(function () { 
+    bestPriceAllSlickOpts = {
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        arrows: true,
+        prevArrow: $('.similar__button-prev'),
+        nextArrow: $('.similar__button-next'),
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    unslick: true
+                }
+            },
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: false,
+                    arrows: true
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots: false,
+                    arrows: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: false
+                }
+            },
+            {
+                breakpoint: 570,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: false
+                }
+            }
+        ]
+    }
+    $('.similar__products_list').slick(bestPriceAllSlickOpts);
+});
 $(function (){
     console.log('init search', (new Date).getTime())
     var $searchInput = $('#search'),
@@ -540,3 +692,18 @@ $(function (){
         $searchForm.removeClass('submit');
     });
 });
+// $(function (){
+// 	var  $paginationButton = $(".page__pagination_link");
+
+//     $paginationButton.on('click', function(e) {
+//     	e.preventDefault();
+//     	var $item = $(this).closest(".page__pagination_item");
+
+//         $item.closest(".page__pagination_item")
+//             .addClass("active")
+//             .siblings()
+//             .removeClass("active");
+//     });
+// });
+
+
