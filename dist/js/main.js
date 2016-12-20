@@ -6,7 +6,7 @@ $(function() {
          "position": "right"
       },
       navbar:{
-         title:       "Контакты"
+         title: "Все контакты"
       }
    });
 });
@@ -845,6 +845,65 @@ $(function () {
         ]
     }
     $('.sale__products_list').slick(bestPriceAllSlickOpts);
+});
+
+$(function () { 
+        viewedProductsSlickOpts = {
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        arrows: true,
+        prevArrow: $('.viewed__products-prev'),
+        nextArrow: $('.viewed__products-next'),
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    unslick: true
+                }
+            },
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: false,
+                    arrows: true
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots: false,
+                    arrows: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: false
+                }
+            },
+            {
+                breakpoint: 570,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: false
+                }
+            }
+        ]
+    }
+    $('.viewed__products_list').slick(viewedProductsSlickOpts);
 });
 $(function (){
     console.log('init search', (new Date).getTime())
