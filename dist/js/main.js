@@ -170,7 +170,9 @@ $(function(){
 });
 
 // Header animate
-var $topMenu = $('.top__menu'),
+var 
+    $body = $("body"),
+    $topMenu = $('.top__menu'),
     $content = $('.maincontent'),
     $header = $('#header'),
     $headerContent = $('.header__bottom_content'),
@@ -178,9 +180,13 @@ var $topMenu = $('.top__menu'),
     headerTopHeight = $headerTop.outerHeight(true);
 
 $(window).on('scroll', function () {
+    if($body.hasClass('page_cart')){
+        return true;
+    }
+
     if ($(window).scrollTop() >=  headerTopHeight) {
         if( $(window).width() < 992){
-            return false;
+            return true;
         }
         $topMenu.hide();
         $content.css('padding-top', '190px');
@@ -386,6 +392,18 @@ $(function () {
         evt.preventDefault();
     });
 })
+
+/*-----------map----------*/
+$(function() {
+    var overlay = $('#overlay-div');
+
+    overlay.on("click", function () {
+        $(this).attr('style', '');
+    });
+    $(window).scroll(function(){ 
+        overlay.attr('style', 'width:100%; height:300px; position:absolute; z-index:20;');
+    });
+});
 $(function () { 
         gallerySlickOpts = {
             dots: true,
