@@ -136,3 +136,15 @@
     font-weight: normal;
     font-style: normal;
 }
+
+
+@font-face {
+    font-family: 'robotoitalic';
+    src: url('roboto-italic-webfont.eot');
+    src: url('roboto-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('roboto-italic-webfont.woff') format('woff'),
+         url('roboto-italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+
+}
