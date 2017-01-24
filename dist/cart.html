@@ -304,25 +304,25 @@
 							<div class="main-title_text">Уже сдесь покупали? <a href="" class="main-title_link">Вход</a></div>
 						</div>
 						<div class="main-content">
-							<ul class="cart__order_list">
-								<li class="cart__order_item cart__first-step active">
-									<div class="cart__order_header">
-										<div class="cart__step_number"></div>
-										<div class="cart__step_title">
-											<h3>Подробности заказа </h3>
+							<form action="#" id="cart_order" method="post">
+								<ul class="cart__order_list">
+									<li data-validate="false" class="cart__order_item cart__first-step active">
+										<div class="cart__order_header">
+											<div class="cart__step_number"></div>
+											<div class="cart__step_title">
+												<h3>Подробности заказа </h3>
+											</div>
+											<div class="cart__step_edit">Редактировать</div>
 										</div>
-										<div class="cart__step_edit">Редактировать</div>
-									</div>
-									<div class="cart__first-step-content">
-										<div class="cart__order_content">
-											<form action="" method="post">
+										<div class="cart__first-step-content">
+											<div class="cart__order_content">
 												<div class="cart__products">
 													<div class="cart__products_list">
 														<div class="cart__products_item">
 															<div class="item__left_collumn">
 																<div class="cart__item cart__item_image-wrap"><a href="#" class="cart__image_link"><img src="images/products/for_products3.png" alt="" class="cart__image"></a></div>
 																<div class="cart__item cart__item_name"><a href="" class="cart__name_link">Віденська кава Italiano Espresso Caffe, зерно</a>
-																	<div class="cart__item_inner"><span class="cart__name_price">420</span><span class="cart__name_price-span">грн/кг	</span></div>
+																	<div class="cart__item_inner"><span class="cart__name_price">420</span><span class="cart__name_price-span">грн/кг </span></div>
 																</div>
 															</div>
 															<div class="item__right_collumn">
@@ -336,14 +336,14 @@
 																		</div>
 																	</div>
 																</div>
-																<div class="cart__item cart__price_total">840<span class="cart__price_total-span">грн			</span></div>
+																<div class="cart__item cart__price_total">840<span class="cart__price_total-span">грн     </span></div>
 															</div>
 														</div>
 														<div class="cart__products_item">
 															<div class="item__left_collumn">
 																<div class="cart__item cart__item_image-wrap"><a href="#" class="cart__image_link"><img src="images/products/for_products3.png" alt="" class="cart__image"></a></div>
 																<div class="cart__item cart__item_name"><a href="" class="cart__name_link">Віденська кава Italiano Espresso Caffe, зерно</a>
-																	<div class="cart__item_inner"><span class="cart__name_price">420</span><span class="cart__name_price-span">грн/кг	</span></div>
+																	<div class="cart__item_inner"><span class="cart__name_price">420</span><span class="cart__name_price-span">грн/кг </span></div>
 																</div>
 															</div>
 															<div class="item__right_collumn">
@@ -357,7 +357,7 @@
 																		</div>
 																	</div>
 																</div>
-																<div class="cart__item cart__price_total">840<span class="cart__price_total-span">грн		</span></div>
+																<div class="cart__item cart__price_total">840<span class="cart__price_total-span">грн   </span></div>
 															</div>
 														</div>
 														<div class="cart__order_total">
@@ -383,24 +383,23 @@
 												</div>
 												<div class="cart__order_footer">
 													<div class="cart__order_buttons">
-														<button href="" type="submit" class="submit__button order__button_next">Далее</button><a href="" class="order__button_prev">Назад </a>
+														<div class="submit__button order__button_next">Далее</div>
+														<div class="order__button_prev">Назад </div>
 													</div>
 												</div>
-											</form>
+											</div>
 										</div>
-									</div>
-								</li>
-								<li class="cart__order_item cart__second-step">
-									<div class="cart__order_header">
-										<div class="cart__step_number"> </div>
-										<div class="cart__step_title">
-											<h3>Заполните информацию о себе</h3>
+									</li>
+									<li class="cart__order_item cart__second-step">
+										<div class="cart__order_header">
+											<div class="cart__step_number"> </div>
+											<div class="cart__step_title">
+												<h3>Заполните информацию о себе</h3>
+											</div>
+											<div class="cart__step_edit">Редактировать</div>
 										</div>
-										<div class="cart__step_edit">Редактировать</div>
-									</div>
-									<div class="cart__second-step-content">
-										<div class="cart__order_content">
-											<form action="" method="post" class="form-horizontal">
+										<div class="cart__second-step-content">
+											<div class="cart__order_content">
 												<div class="row">
 													<div class="col-md-9">
 														<div class="form-group">
@@ -428,38 +427,36 @@
 												</div>
 												<div class="cart__order_footer">
 													<div class="cart__order_buttons">
-														<button type="submit" class="submit__button order__button_next">Далее</button>
-														<button href="" class="order__button_prev">Назад </button>
+														<div class="submit__button order__button_next">Далее</div>
+														<div class="order__button_prev prev__step">Назад </div>
 													</div>
 												</div>
-											</form>
+											</div>
 										</div>
-									</div>
-								</li>
-								<li class="cart__order_item cart__third-step">
-									<div class="cart__order_header">
-										<div class="cart__step_number"> </div>
-										<div class="cart__step_title">
-											<h3>Выберите способ доставки</h3>
+									</li>
+									<li class="cart__order_item cart__third-step">
+										<div class="cart__order_header">
+											<div class="cart__step_number"> </div>
+											<div class="cart__step_title">
+												<h3>Выберите способ доставки</h3>
+											</div>
+											<div class="cart__step_edit">Редактировать</div>
 										</div>
-										<div class="cart__step_edit">Редактировать</div>
-									</div>
-									<div class="cart__third-step-content">
-										<div class="cart__order_content">
-											<form action="" method="post" class="form-horizontal">
+										<div class="cart__third-step-content">
+											<div class="cart__order_content">
 												<div class="row">
 													<div class="col-md-9">
-														<div class="form-group">
-															<div id="delivery__tabs_controls">
-																<label data-class="tab_pick-up" class="cart__choose-label cart__choose-label-pick-up col-sm-4">
-																	<input type="radio" checked value="Самовывоз" name="delivery" class="cart__choose-input">
+														<div class="form-group"> 
+															<div id="delivery__tabs_controls" class="delivery__tabs_controls">
+																<label data-class="tab_pick-up" class="cart__choose-label cart__choose-label-pick-up">
+																	<input type="radio" value="Самовывоз" name="delivery" class="cart__choose-input">
 																	<div class="cart__chose-text">Самовывоз</div>
 																</label>
-																<label data-class="tab_courier" class="cart__choose-label cart__choose-label-courier col-sm-4">
-																	<input type="radio" value="Курьером" name="delivery" class="cart__choose-input">
+																<label data-class="tab_courier" class="cart__choose-label cart__choose-label-courier">
+																	<input type="radio" checked value="Курьером" name="delivery" class="cart__choose-input">
 																	<div class="cart__chose-text">Курьером</div>
 																</label>
-																<label data-class="tab_post" class="cart__choose-label cart__choose-label-post col-sm-4">
+																<label data-class="tab_post" class="cart__choose-label cart__choose-label-post">
 																	<input type="radio" value="Новой Почтой" name="delivery" class="cart__choose-input">
 																	<div class="cart__chose-text">Новой Почтой</div>
 																</label>
@@ -489,15 +486,54 @@
 												</div>
 												<div class="cart__order_footer">
 													<div class="cart__order_buttons">
-														<button type="submit" class="submit__button order__button">Оформить заказ</button>
-														<button href="" class="order__button_prev">Назад </button>
+														<div class="submit__button order__button_next">Далее</div>
+														<div class="order__button_prev prev__step">Назад </div>
 													</div>
 												</div>
-											</form>
+											</div>
 										</div>
-									</div>
-								</li>
-							</ul>
+									</li>
+									<li class="cart__order_item cart__fourth-step">
+										<div class="cart__order_header">
+											<div class="cart__step_number"> </div>
+											<div class="cart__step_title">
+												<h3>Выберите способ оплаты</h3>
+											</div>
+											<div class="cart__step_edit">Редактировать</div>
+										</div>
+										<div class="cart__fourth-step-content">
+											<div class="cart__order_content">
+												<div class="form-group">
+													<div class="order__payment_controls">
+														<label class="order__choose-label order__choose-cash">
+															<input type="radio" checked value="Наличными" name="payment" class="order__choose-input">
+															<div class="order__chose-text"> <span class="order__chose-span">Наличными</span></div>
+														</label>
+														<label class="order__choose-label order__choose-transfer">
+															<input type="radio" value="Банковыский перевод" name="payment" class="order__choose-input">
+															<div class="order__chose-text"> <span class="order__chose-span">Банковыский перевод</span></div>
+														</label>
+														<label class="order__choose-label order__choose-invoice">
+															<input type="radio" value="Накладной счет в отделе НП" name="payment" class="order__choose-input">
+															<div class="order__chose-text"> <span class="order__chose-span">Накладной счет в отделе НП</span></div>
+														</label>
+														<label class="order__choose-label order__choose-cashless">
+															<input type="radio" value="Безналичный расчет" name="payment" class="order__choose-input">
+															<div class="order__chose-text"> <span class="order__chose-span">Безналичный расчет</span></div>
+														</label>
+													</div>
+												</div>
+												<div class="cart__order_footer">
+													<div class="cart__order_buttons">
+														<button type="submit" class="submit__button order__button">Оформить заказ</button>
+														<div class="order__button_prev prev__step">Назад </div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</form>
 						</div>
 					</div>
 				</article>

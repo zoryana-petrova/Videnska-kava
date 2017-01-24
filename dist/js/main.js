@@ -190,10 +190,10 @@ $(document).ready(function(){
             .siblings()
             .removeClass('active');
     });
-    $('#delivery__tabs_controls .cart__choose-label').on('click', function(){
-        // e.preventDefault();
 
-        var item = $(this).closest('.cart__choose-label'),
+    $('#delivery__tabs_controls .cart__choose-label').on('click', function(){
+        var $this = $(this), 
+            item = $this.closest('.cart__choose-label'),
             contentItem = $('.tab__pane'),
             itemPosition = item.data('class');
 
@@ -202,6 +202,9 @@ $(document).ready(function(){
             .addClass('active')
             .siblings()
             .removeClass('active');
+
+
+        $this.closest('#delivery__tabs_controls').trigger('tabchange.cart');
     });
     
 });
@@ -462,102 +465,195 @@ $(function() {
         overlay.attr('style', 'width:100%; height:300px; position:absolute; z-index:20;');
     });
 });
+
 /*-----------cart step----------*/
-$(function() {
-    var firstStepNext = $('.cart__first-step').find('.order__button_next'),
-        secondStepNext = $('.cart__second-step').find('.order__button_next'),
+$(function () {
+    function isValidStepInput(input){
+        return input.value !== "";
+    }
 
-        secondStepPrev = $('.cart__second-step').find('.order__button_prev'),
-        thirdStepPrev = $('.cart__third-step').find('.order__button_prev'),   
+    function getStepInputs($step){
+       return $step.find("input:visible") 
+    }
+
+
+    function getStepInvalidInputs($step) {
+        var $inputs = getStepInputs($step),
+            $invalidInputs = $inputs.filter(function(i, input){
+                return !isValidStepInput(input);
+            });
         
-        firstStep = $('.cart__first-step'),
-        secondStep = $('.cart__second-step'),
-        thirdStep = $('.cart__third-step');
+        return $invalidInputs;
+    }
+
+    function getStepValidInputs($step) {
+        var $inputs = getStepInputs($step),
+            $validInputs = $inputs.filter(function(i, input){
+                return isValidStepInput(input);
+            });
         
-      
-    firstStepNext.on("click", function (e) {
-        e.preventDefault;
-        var item =  $(this).parents('.cart__order_item');
+        return $validInputs;
+    }
 
-        item.removeClass('active');
-        secondStepNext.parents('.cart__order_item').addClass('active');
+    function handleStepErrors($stepErrors){
+        $stepErrors.each(function(ind, input){
+            var $input = $(input),
+                $formGroup = $input.parents('.form-group'), 
+                textError = 'Заполните это поле';
+
+                $formGroup.addClass('input__error')
+                          .removeClass('input__success')
+                          .find('.error-text')
+                          .html(textError);
+        });
+    }
+
+    function clearErrors($inputs){
+        $inputs.each(function(ind, input) {
+            var $input = $(input),
+                $formGroup = $input.parents('.form-group');
+
+                $formGroup.removeClass('input__error')
+                          .addClass('input__success')
+                          .find('.error-text')
+                          .html("");
+        });
+    }
+
+    function resetStepErrors($inputs){
+        $inputs.each(function(ind, input) {
+            var $input = $(input),
+                $formGroup = $input.parents('.form-group');
+
+                $formGroup.removeClass('input__error')
+                          .removeClass('input__success')
+                          .find('.error-text')
+                          .html("");
+        });
+    }
+
+    function validateStep($step){
+        if($step.data('validate') === false){
+            return true;
+        }
+
+        var $validInputs = getStepValidInputs($step);
+        clearErrors($validInputs);
+
+        var $stepErrors = getStepInvalidInputs($step);
+        handleStepErrors($stepErrors);
+
+        return $stepErrors.length === 0;
+    }
+
+    function validateStepInput($step, $input){
+        if($step.data('validate') === false){
+            return true;
+        }
+
+        if(isValidStepInput($input.get(0))){
+            clearErrors($input);
+        } else {
+            handleStepErrors($input);
+        }
+    }
+
+    function onStepChange($steps){
+        $steps.each(function(ind, step){
+            var $step = $(step);
+
+            if($step.data('validate') === false){
+                return;
+            }
+            
+            getStepInputs($step).on("change.cart_order", function(evt){
+                validateStepInput($step, $(this));
+            })    
+        })
+    }
+
+    function offStepChange($steps){
+        $steps.each(function(ind, step){
+            var $step = $(step);
+
+            if($step.data('validate') === false){
+                return;
+            }
+            
+            getStepInputs($step).off("change.cart_order");
+        })
+    }
+
+    var $cartForm = $('form#cart_order'),
+        $cartSteps = $('.cart__order_item', $cartForm),
+        $stepNextAction = $cartSteps.find('.order__button_next'),
+        $stepPrevAction = $cartSteps.find('.prev__step'),   
+        $editAction = $('.cart__step_edit'),
+        $deliveryTabs = $('#delivery__tabs_controls', $cartForm);
+
+
+    $deliveryTabs.on("tabchange.cart", function(){
+        var $step = $(this).parents('.cart__order_item');
+        
+        var $inputs = getStepInputs($step),
+            $validInputs = getStepValidInputs($step);
+    
+        // Remove all error/sucess indication
+        resetStepErrors($inputs);
+
+        // Mark valid input. Form could be partially valid
+        clearErrors($step);
+
+        // Unsubscribe from input change events (could be subscribe to the hidden ones)
+        offStepChange($step);
+
+        // Subscribe to input change events (to those who a visible know)
+        onStepChange($step);
+    })    
+    
+    $editAction.on("click", function (e) {
+        var $currentStep = $(this).parents('.cart__order_item');
+
+        $cartSteps.removeClass('active');
+        $currentStep.removeClass('checked')
+                    .addClass('active');
+        
+        offStepChange($cartSteps);    
+        onStepChange($currentStep)
+
+        return false;
+    });
+    
+    $stepNextAction.on("click", function (e) {
+        var $currentStep = $(this).parents('.cart__order_item');
+
+        if(validateStep($currentStep, true)){
+            $cartSteps.removeClass('active');
+            $currentStep.addClass('checked');
+            $currentStep.next().addClass('active');
+
+            offStepChange($cartSteps);    
+            onStepChange($currentStep.next())
+        }       
+
+        return false;
     });
 
-    secondStepNext.on("click", function (e) {
-        e.preventDefault;
-        var item =  $(this).parents('.cart__order_item');
+    $stepPrevAction.on("click", function (e) {
+        var $currentStep = $(this).parents('.cart__order_item');
 
-        item.removeClass('active');
-        thirdStep.addClass('active');
-    });
+        $cartSteps.removeClass('active');
+        $currentStep.prev()
+            .addClass('active')
+            .removeClass('checked');
 
+        offStepChange($cartSteps);  
+        onStepChange($currentStep.prev())
 
-    secondStepPrev.on("click", function (e) {
-        e.preventDefault;
-        var item =  $(this).parents('.cart__order_item');
-
-        item.removeClass('active');
-        firstStep.addClass('active');
-    });
-
-    thirdStepPrev.on("click", function (e) {
-        e.preventDefault;
-        var item =  $(this).parents('.cart__order_item');
-
-        item.removeClass('active');
-        secondStep.addClass('active');
+        return false;
     });
 });
 
-
-/*-----------cart form----------*/
-(function() {
-    var app = {
-        initialize :  function () {
-            this.setUpListeners();
-        },
-
-        setUpListeners : function() {
-            $('form').on('submit', app.submitForm);
-            $('form').on('keydown', 'input', app.removeError);
-        }, 
-
-        submitForm: function(e){
-            e.preventDefault();
-            var form = $(this);
-            if(app.validateForm(form) === false) return false;
-
-            console.log('go in ajax');
-        },
-
-        validateForm : function(form){
-            var inputs = form.find('input'),
-                valid = true;
-
-            $.each(inputs, function(index, val){
-                var input = $(val), 
-                    val = input.val(),
-                    formGroup = input.parents('.form-group'), 
-                    textError = 'Заполните это поле';
-
-                if(val.length === 0){
-                    formGroup.addClass('input__error').removeClass('input__success');
-                    formGroup.find('.error-text').html(textError);
-                    valid = false;
-                }else{
-                    formGroup.addClass('input__success').removeClass('input__error');
-                   
-                }
-            });
-            return valid;
-        },
-
-        removeError: function(){
-            $(this).parents('.form-group').removeClass('input__error').find('.error-text').html('');
-        }
-    }
-    app.initialize();
-}());
 $(function () { 
         gallerySlickOpts = {
             dots: true,
