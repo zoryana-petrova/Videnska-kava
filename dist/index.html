@@ -33,7 +33,7 @@
 				<section id="header" data-spy="affix" data-offset-top="1" class="header">
 					<div class="header__top">
 						<div class="container">
-							<div class="left__collumn"><a class="logo__link">
+							<div class="left__collumn"><a href="#" class="logo__link">
 									<h1 class="logo">
 										<div class="logo__container"><img src="images/logo/logo_scroll.png" alt="Віденська кава"></div>
 									</h1></a>
@@ -215,10 +215,10 @@
 													</ul>
 												</div>
 											</div>
-											<div class="contacts__callback">или закажите <a href="#">обратную связь </a></div>
+											<div class="contacts__callback">или закажите <a id="header-callback" href="#">обратную связь </a></div>
 										</div>
 									</div>
-									<div class="col-sm-2"><a class="logo">
+									<div class="col-sm-2"><a href="#" class="logo">
 											<div class="logo__container"><img src="images/logo/logo.png" alt="Віденська кава"></div>
 											<h1 class="logo_text">Віденська кава</h1></a></div>
 									<div class="col-sm-5">
@@ -748,6 +748,82 @@
 										<div class="products__item_long">
 											<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
 											<div class="products__item-inner">
+												<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
+												<div class="products__price">
+													<div class="products__price_item products__price_retail">130<span>грн</span></div>
+													<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+												</div>
+											</div>
+											<div class="products__desc">
+												<div class="functs__buttons">
+													<div class="product-buy">
+														<form action="" method="POST">
+															<div class="product-buy__buttons"> 
+																<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
+																<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
+															</div>
+														</form>
+													</div>
+												</div>
+												<ul class="products__options_list">
+													<li class="products__options_item">
+														<div class="products__options_text">
+															<div class="option__text">Насыщенность</div>
+														</div>
+														<ul class="products__options_value">
+															<li class="options_value_item options_value_filed"></li>
+															<li class="options_value_item options_value_filed"></li>
+															<li class="options_value_item options_value_filed"></li>
+															<li class="options_value_item options_value_filed"></li>
+															<li class="options_value_item options_value_filed"></li>
+														</ul>
+														<li class="products__options_item">
+															<div class="products__options_text">
+																<div class="option__text">Горчинка</div>
+															</div>
+															<ul class="products__options_value">
+																<li class="options_value_item options_value_filed"></li>
+																<li class="options_value_item options_value_empty"></li>
+																<li class="options_value_item options_value_empty"></li>
+																<li class="options_value_item options_value_empty"></li>
+																<li class="options_value_item options_value_empty"></li>
+															</ul>
+														</li>
+														<li class="products__options_item">
+															<div class="products__options_text">
+																<div class="option__text">Крепость</div>
+															</div>
+															<ul class="products__options_value">
+																<li class="options_value_item options_value_filed"></li>
+																<li class="options_value_item options_value_filed"></li>
+																<li class="options_value_item options_value_filed"></li>
+																<li class="options_value_item options_value_filed"></li>
+																<li class="options_value_item options_value_empty"></li>
+															</ul>
+														</li>
+														<li class="products__options_item">
+															<div class="products__options_text">
+																<div class="option__text">Кислинка</div>
+															</div>
+															<ul class="products__options_value">
+																<li class="options_value_item options_value_filed"></li>
+																<li class="options_value_item options_value_filed"></li>
+																<li class="options_value_item options_value_filed"></li>
+																<li class="options_value_item options_value_empty"></li>
+																<li class="options_value_item options_value_empty"></li>
+															</ul>
+														</li>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="products__item">
+									<div class="over__wraper">
+										<div class="products__item_long">
+											<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+											<div class="products__item-inner">
 												<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
 												<div class="products__price">
 													<div class="products__price_item products__price_retail">130<span>грн</span></div>
@@ -895,9 +971,13 @@
 										</div>
 									</div>
 								</li>
-								<li class="products__item">
+								<li class="products__item sale">
+									<div class="products__label_content">
+										<div class="label__item">-10%</div>
+									</div>
 									<div class="over__wraper">
 										<div class="products__item_long">
+											<div class="sale__text">Распродажа</div>
 											<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
 											<div class="products__item-inner">
 												<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
@@ -1152,647 +1232,598 @@
 						<div class="section__header">
 							<h2 class="section__title">Лучшая цена</h2>
 							<ul id="price__controls" class="tabs__controls_list">
-								<li data-class="tab_price_all" class="tab_price_all tabs__controls_item active"><a href="#" class="tabs__controls_link">Все</a></li>
-								<li data-class="tab_robusta" class="tabs__controls_item"><a href="#" class="tabs__controls_link">Робуста</a></li>
-								<li data-class="tab_ground" class="tabs__controls_item"><a href="#" class="tabs__controls_link">Молотый кофе</a></li>
-								<li data-class="tab_other" class="tabs__controls_item"><a href="#" class="tabs__controls_link">Другая категория</a></li>
+								<li data-filter="price_all" class="tab_price_all tabs__controls_item active"><a href="#" class="tabs__controls_link">Все</a></li>
+								<li data-filter="robusta" class="tabs__controls_item"><a href="#" class="tabs__controls_link">Робуста</a></li>
+								<li data-filter="ground" class="tabs__controls_item"><a href="#" class="tabs__controls_link">Молотый кофе</a></li>
+								<li data-filter="other" class="tabs__controls_item"><a href="#" class="tabs__controls_link">Другая категория</a></li>
 							</ul><a href="" class="section__link"> Все предложения</a>
 						</div>
 						<div class="section__content">
-							<ul class="tabs__content_list">
-								<li class="tab__pane pane__tab_price_all active">
-									<div class="slick__arrows-center">
-										<ul id="best-price-all" class="best__price_list">
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
-															</div>
+							<div class="tabs__content_list">
+								<div class="slick__arrows-center">
+									<ul id="best-price" class="best__price_list">
+										<li data-filter="price_all" class="best__price_item products__item price_all">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
 														</div>
-														<div class="products__desc">
-															<div class="functs__buttons">
-																<div class="product-buy">
-																	<form action="" method="get">
-																		<div class="product-buy__buttons"> 
-																			<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
-																			<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
-																		</div>
-																	</form>
-																</div>
+													</div>
+													<div class="products__desc">
+														<div class="functs__buttons">
+															<div class="product-buy">
+																<form action="" method="get">
+																	<div class="product-buy__buttons"> 
+																		<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
+																		<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
+																	</div>
+																</form>
 															</div>
 														</div>
 													</div>
 												</div>
+											</div>
+										</li>
+										<li data-filter="price_all" class="best__price_item products__item price_all">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
+														</div>
+													</div>
+													<div class="products__desc">
+														<div class="functs__buttons">
+															<div class="product-buy">
+																<form action="" method="get">
+																	<div class="product-buy__buttons"> 
+																		<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
+																		<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all" class="best__price_item products__item price_all">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+													<div class="products__desc">
+														<div class="functs__buttons">
+															<div class="product-buy">
+																<form action="" method="get">
+																	<div class="product-buy__buttons"> 
+																		<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
+																		<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all" class="best__price_item products__item price_all">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+													<div class="products__desc">
+														<div class="functs__buttons">
+															<div class="product-buy">
+																<form action="" method="get">
+																	<div class="product-buy__buttons"> 
+																		<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
+																		<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all" class="best__price_item products__item price_all">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
+														</div>
+													</div>
+													<div class="products__desc">
+														<div class="functs__buttons">
+															<div class="product-buy">
+																<form action="" method="get">
+																	<div class="product-buy__buttons"> 
+																		<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
+																		<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all" class="best__price_item products__item price_all">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
+														</div>
+													</div>
+													<div class="products__desc">
+														<div class="functs__buttons">
+															<div class="product-buy">
+																<form action="" method="get">
+																	<div class="product-buy__buttons"> 
+																		<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
+																		<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all" class="best__price_item products__item price_all">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+													<div class="products__desc">
+														<div class="functs__buttons">
+															<div class="product-buy">
+																<form action="" method="get">
+																	<div class="product-buy__buttons"> 
+																		<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
+																		<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all" class="best__price_item products__item price_all">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Марагоджип Нікарагуа </a><span>(500 гр) </span></div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+													<div class="products__desc">
+														<div class="functs__buttons">
+															<div class="product-buy">
+																<form action="" method="get">
+																	<div class="product-buy__buttons"> 
+																		<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
+																		<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all robusta" class="best__price_item products__item price_all robusta">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products3.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all robusta" class="best__price_item products__item price_all robusta">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all robusta" class="best__price_item products__item price_all robusta">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all robusta" class="best__price_item products__item price_all robusta">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products3.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all robusta" class="best__price_item products__item price_all robusta">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products3.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all robusta" class="best__price_item products__item price_all robusta">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all robusta" class="best__price_item products__item price_all robusta">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all robusta" class="best__price_item products__item price_all robusta">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all ground" class="best__price_item products__item price_all ground">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all ground" class="best__price_item products__item price_all ground">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all ground" class="best__price_item products__item price_all ground">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all ground" class="best__price_item products__item price_all ground">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all ground" class="best__price_item products__item price_all ground">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all ground" class="best__price_item products__item price_all ground">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all ground" class="best__price_item products__item price_all ground">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all ground" class="best__price_item products__item price_all ground">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Марагоджип Нікарагуа </a><span>(500 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all other" class="best__price_item products__item price_all other">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products3.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all other" class="best__price_item products__item price_all other">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all other" class="best__price_item products__item price_all other">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all other" class="best__price_item products__item price_all other">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products3.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all other" class="best__price_item products__item price_all other">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products3.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all other" class="best__price_item products__item price_all other">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">230<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all other" class="best__price_item products__item price_all other">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-filter="price_all other" class="best__price_item products__item price_all other">
+											<div class="over__wraper">
+												<div class="products__item_long">
+													<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
+													<div class="products__item-inner">
+														<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
+														<div class="products__title_text"> </div>
+														<div class="products__price">
+															<div class="products__price_item products__price_retail">130<span>грн</span></div>
+															<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<div class="paginations"></div>
+									<div class="paginations">
+										<ul class="pagination__list">
+											<li class="pagination__item">
+												<button class="pagination__button price__all_button-prev button_prev"></button>
 											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
-															</div>
-														</div>
-														<div class="products__desc">
-															<div class="functs__buttons">
-																<div class="product-buy">
-																	<form action="" method="get">
-																		<div class="product-buy__buttons"> 
-																			<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
-																			<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
-																		</div>
-																	</form>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-														<div class="products__desc">
-															<div class="functs__buttons">
-																<div class="product-buy">
-																	<form action="" method="get">
-																		<div class="product-buy__buttons"> 
-																			<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
-																			<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
-																		</div>
-																	</form>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-														<div class="products__desc">
-															<div class="functs__buttons">
-																<div class="product-buy">
-																	<form action="" method="get">
-																		<div class="product-buy__buttons"> 
-																			<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
-																			<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
-																		</div>
-																	</form>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
-															</div>
-														</div>
-														<div class="products__desc">
-															<div class="functs__buttons">
-																<div class="product-buy">
-																	<form action="" method="get">
-																		<div class="product-buy__buttons"> 
-																			<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
-																			<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
-																		</div>
-																	</form>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
-															</div>
-														</div>
-														<div class="products__desc">
-															<div class="functs__buttons">
-																<div class="product-buy">
-																	<form action="" method="get">
-																		<div class="product-buy__buttons"> 
-																			<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
-																			<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
-																		</div>
-																	</form>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-														<div class="products__desc">
-															<div class="functs__buttons">
-																<div class="product-buy">
-																	<form action="" method="get">
-																		<div class="product-buy__buttons"> 
-																			<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
-																			<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
-																		</div>
-																	</form>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Марагоджип Нікарагуа </a><span>(500 гр) </span></div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-														<div class="products__desc">
-															<div class="functs__buttons">
-																<div class="product-buy">
-																	<form action="" method="get">
-																		<div class="product-buy__buttons"> 
-																			<button type="submit" class="products__buy-btn"><span class="products__buy-span">В корзину</span></button>
-																			<button type="submit" class="buy__click_submit"><span class="products__buy-span">Купить в 1 клик</span></button>
-																		</div>
-																	</form>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-										</ul>
-										<div class="paginations">
-											<ul class="pagination__list">
-												<li class="pagination__item">
-													<button class="pagination__button price__all_button-prev button_prev"></button>
-												</li>
-												<li class="pagination__item">
-													<button class="pagination__button price__all_button-next button_next"> </button>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li class="tab__pane pane__tab_robusta">
-									<div class="slick__arrows-center">
-										<ul id="best-price-robusta" class="best__price_list">
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products3.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products3.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products3.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-										</ul>
-										<div class="paginations">
-											<ul class="pagination__list">
-												<li class="pagination__item">
-													<button class="pagination__button robusta__button_prev button_prev"></button>
-												</li>
-												<li class="pagination__item">
-													<button class="pagination__button robusta__button_next button_next"> </button>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li class="tab__pane pane__tab_ground">
-									<div class="slick__arrows-center">
-										<ul id="best-price-ground" class="best__price_list">
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Марагоджип Нікарагуа </a><span>(500 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-										</ul>
-										<div class="paginations">
-											<ul class="pagination__list">
-												<li class="pagination__item">
-													<button class="pagination__button ground__button_prev button_prev"></button>
-												</li>
-												<li class="pagination__item">
-													<button class="pagination__button ground__button_next button_next"> </button>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li class="tab__pane pane__tab_other">
-									<div class="slick__arrows-center">
-										<ul id="best-price-tab_other" class="best__price_list">
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products3.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products3.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products3.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Кава мелена Львівська Сонячна </a><span>(500 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">2330<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Болівія </a><span>(1/100 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">230<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">420<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(1/100 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="best__price_item products__item">
-												<div class="over__wraper">
-													<div class="products__item_long">
-														<div class="products__img_wrap"><a href="#" class="products__link"><img src="images/products/for_products2.png" alt="" class="products__img"></a></div>
-														<div class="products__item-inner">
-															<div class="product__title"><a href="#" class="products__title_link">Ефіопя Їргачоф грейд 2 </a><span>(250 гр) </span></div>
-															<div class="products__title_text"> </div>
-															<div class="products__price">
-																<div class="products__price_item products__price_retail">130<span>грн</span></div>
-																<div class="products__price_item products__price_wholesale">440<span>грн/кг</span></div>
-															</div>
-														</div>
-													</div>
-												</div>
+											<li class="pagination__item">
+												<button class="pagination__button price__all_button-next button_next"> </button>
 											</li>
 										</ul>
-										<div class="paginations">
-											<ul class="pagination__list">
-												<li class="pagination__item">
-													<button class="pagination__button other__button_prev button_prev"></button>
-												</li>
-												<li class="pagination__item">
-													<button class="pagination__button other__button_next button_next"> </button>
-												</li>
-											</ul>
-										</div>
 									</div>
-								</li>
-							</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>

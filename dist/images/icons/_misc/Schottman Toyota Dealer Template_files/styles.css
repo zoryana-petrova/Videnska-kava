@@ -1,0 +1,1427 @@
+@charset "UTF-8";
+@import url("/webfonts/Exo_Regular/stylesheet.css");
+@import url("/webfonts/GrandHotel_Regular/stylesheet.css");
+@import url("/webfonts/Homestead_Regular/stylesheet.css");
+@import url("/webfonts/exo_regular_italic/stylesheet.css");
+/* CSS Document */
+
+/* #Clearing
+================================================== */
+
+.row:before,
+.row:after,
+.grid:before,
+.grid:after,
+.clearfix:after,
+.clearfix:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* IE8 fix for some clearing */
+.clear {
+    clear: both;
+}
+
+@media only screen and (max-width:1024px) {
+    .med-clear {
+        clear: both;
+    }
+}
+
+/*style*/
+body {
+    background: #fff;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    color: #231f20;
+}
+
+ul, ol, dl {
+	font-size:12px;
+}
+
+.wrapper, .row {
+	max-width:1200px;
+	margin:0 auto;
+}
+
+.row {
+	padding-top:15px;
+}
+
+.columns {
+	padding-bottom:15px;
+}
+
+.no-pad {
+	padding:0;
+}
+
+.inline {
+  display: inline;
+  }
+
+/* paragraph */
+
+p {
+    line-height: 1.25em;
+}
+
+/* Headings */
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: .5em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.25em;
+    margin-bottom: .5em;
+}
+
+h3 {
+    font-size: 1.1em;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+}
+
+  sup { 
+    vertical-align: super;
+    font-size: smaller;
+}
+
+input {
+    -webkit-appearance: none !important;
+    border-radius: 0 !important;
+}
+
+
+  /* ===== Site Link Style ===== */
+/* inline link styling */
+a {
+    text-decoration: none;
+    color: #d51d29;
+}
+
+a:hover { color: #231f20; }
+
+.customcontent a { text-decoration: underline; }
+
+.customcontent ul {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+/* button styling */
+.custompage .button {display:inline-block}
+
+.button,
+#customform input[type="submit"] {
+    color: #fff;
+    background: #d51d29;
+    border-radius: 3px;
+    border: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: block;
+    margin: 2px 0;
+    background: #d51d29;
+    border-radius:0;
+}
+
+.button:hover,
+a:hover .button,
+#customform input[type="submit"]:hover,
+button:focus, .button:focus {
+    background: #231f20;
+    color: #fff;
+}
+
+
+.img-responsive {
+	width:100%;
+}
+
+.float-right {
+	float: right;
+}
+
+.bold, strong {
+    font-weight:700;
+}
+
+/*--======= Schottman Nav =======--*/
+
+.top-bar {
+	background: #6f575f;
+	position:fixed;
+	width:100%;
+	z-index:999;
+	top:0px;
+}
+
+.schottman-logo {
+	background:url(../images/LogoBig.png) 0 0 no-repeat;
+	background-size:contain;
+	width:95px;
+	height:95px;
+	position:absolute;
+	left:0;
+    top:15%;
+}
+
+a p.logo-txt {
+    color:#f9f8ed;
+    margin:0 8em;
+    line-height:45px;
+    font-size:0.8125rem;
+}
+
+a:hover p.logo-txt {
+    color:#9da189;
+}
+
+.top-bar-section ul li > a {
+	font-family:"exo regular";
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background:#6f575f;
+	color:#f9f8ed;
+}
+
+.top-bar-section li:not(.has-form):hover a:not(.button) {
+	background:#9da189;
+}
+
+.top-bar-section .dropdown li:not(.has-form) a:not(.button) {
+	background:#6f575f;
+}
+
+.top-bar-section ul.dropdown li:not(.has-form):hover a:not(.button) {
+	background:#9da189;
+}
+
+
+@media screen and (min-width: 64.063em) {
+	.top-bar-section {
+		max-width:1200px;
+		padding:0 2em 0 0;
+		margin:0 auto;
+	}
+}
+
+.wrapper .content {
+	margin:5em auto 0;
+}
+
+@media screen and (max-width: 40.063em) {
+    .top-bar, .top-bar .name {
+        height:65px;
+    }
+
+    .top-bar-section li:not(.has-form) a:not(.button) {
+        line-height:25px;
+    }
+
+    a p.logo-txt {
+        display:none;
+    }
+
+    .schottman-logo {
+    height:65px;
+    width:65px;
+    top:0;
+    }
+}
+
+
+/*--======= hero bg =======--*/
+div.hero-bg {
+	background: url(../images/toyota-hero.jpg) center bottom no-repeat;
+	background-attachment: fixed;
+	background-size:cover;
+}
+
+@media only screen and (max-width:641px) {
+    div.hero-bg {
+        background:#fff;
+    }
+
+    div.sm-hero-bg {
+        background: url(../images/toyota-hero.jpg) center bottom no-repeat;
+        background-size:cover;
+    }
+}
+
+/*--======= header =======--*/
+
+/*logo*/
+header.wrapper{
+	margin:0 auto;
+    padding: 8em 0 0;
+	color:#fff;
+}
+
+header .logo {
+	color: #fff;
+	text-align: center;
+	font: 0/0 a;
+	display: block;
+	width: 100%;
+	max-width: 330px;
+	max-height: 80px;
+    display:block;
+}
+
+
+/*contact info*/
+header .contact-container {
+	padding-bottom:10px;
+    float:right;
+}
+
+header .contact-container .top-icons {
+    float:right;
+}
+
+header .contact-phones .label {
+    display: none;
+}
+
+/*top header*/
+ul.top-icons {
+	position:relative;
+}
+
+ul.top-icons li {
+   font-size: 1.75em;
+  display: inline-block;
+  border: solid 3px #fff;
+  padding: .35em;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  margin: 0 0 0 .25em;
+}
+
+ul.top-icons li.active {
+	color:#231f20;
+	background:#fff;
+}
+
+ul.top-icons li > span {
+    display:block;
+    width:100%;
+    height:100%;
+
+}
+
+ul.top-icons li.active .fa-times:before {
+	content: "\f00d";
+}
+
+ul.top-icons li > div {
+	position: absolute;
+  	background: #fff;
+  	color: #231f20;
+  	display: none;
+  	width: 400px;
+  	right: 100%;
+  	top: 0;
+  	z-index: 997;
+  	margin: 0 10px;
+  	font-size: 1rem;
+  	padding: .5em;
+    line-height: 1.65em;
+    height:40px;
+}
+
+
+
+ul.top-icons li:hover {
+    cursor:pointer;
+}
+
+.contact-phones > div {
+    display:inline-block;
+    padding: 0 .5em;
+}
+
+.top-contact-item a {
+    color:#231f20;
+    
+}
+
+.top-contact-item:hover a,
+.top-contact-item:hover {
+    font-style: italic;
+
+}
+
+.top-icons > li .top-contact-item a > i, .top-icons > li .top-contact-item span > i {
+    margin:0 .5em 0 0;
+    color:transparent;
+    
+}
+
+.top-icons > li .top-contact-item:hover a > i, 
+.top-icons > li .top-contact-item:hover span > i {
+    color:#d51d29;
+    transition: all .5s ease-in-out;
+}
+
+.contact-phones > div.sales-phone {
+    border-right:solid 2px;
+}
+
+
+ul.top-icons .address div > i:hover {
+    color:#fff;
+    background:transparent;
+}
+@media only screen and (max-width: 1024px) {
+	ul.top-icons {
+        position:static;
+    }
+
+    ul.top-icons li > div {
+        top:100%;
+        width:100%;
+        height:80px;
+        right:0;
+        margin:10px 0;
+    }
+
+    .contact-phones > div {
+        line-height: 2em;
+    }
+
+    .contact-phones > div.sales-phone {
+        border:0;
+    }
+
+    header .contact-container .top-icons .chat {
+		display:none;
+	}
+
+    .contact-container .contact-address span {
+        display:block;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+
+    header .logo-container {
+        padding: 10px 0;
+    }
+
+    header .contact-info-container {
+        padding: 0;
+        background: none;
+    }
+
+}
+
+@media only screen and (max-width:641px) {
+    .sm-hero-bg {
+        margin:4em 0 0;
+    }
+
+    header.wrapper {
+        padding:2em 0 10em;
+    }
+
+    header .logo-col{
+        padding:0 .25em;
+        z-index:998;
+    }
+
+    header .logo-container {
+        padding:0
+    }
+
+    header .contact-container { 
+        position:absolute;
+        padding:0 1em;
+    }
+
+    header .contact-container .top-icons {
+        position:static;
+    }
+
+    ul.top-icons li {
+        font-size:1.5em;
+        margin: 0 0 0 .5em;
+    }
+
+    ul.top-icons li > div {
+        box-shadow: 0 2px 3px #231f20;
+        left:0;
+        right: 0;
+    }
+}
+
+/*--======= Nav =======--*/
+.nav {
+    position: relative;
+    z-index: 900;
+    /*background: #d51d29;*/
+    color: #fff;
+    /*border:solid #231f20;
+    border-width:1px 0;*/
+    margin: 0 0 2em;
+    /*border:solid 3px #fff;*/
+}
+
+header .top-icons .mobile-toggle {
+    cursor:pointer;
+    display:none;
+}
+
+.nav .menu {
+    display: table;
+    width: 100%;
+}
+
+.nav .menu > ul {
+    display: table-row;
+    margin:0;
+}
+
+.nav .menu > ul > li {
+    display: table-cell;
+    /*padding:0 .9em;*/
+    padding:.4em 0 0;
+/*    border:solid transparent;
+    border-width:0 0 .4em;*/
+}
+
+.nav .menu > ul > li > a {
+    display: block;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-size: 1.3em;
+    /*text-transform: uppercase;*/
+    line-height: 2em;
+}
+
+/*.nav .menu > ul > li:hover > a {
+    color:#d51d29;
+}*/
+
+.nav .menu > ul > li:hover {
+    background: #d51d29;
+    /*border:solid #d51d29;
+    border-width:0 0 .4em;*/
+}
+
+.nav .menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    z-index: 999;
+    border: 1px solid #d51d29;
+    background: rgba(255,255,255,.6);
+}
+
+.nav .menu ul ul ul {
+    top: 0;
+    left: 100%;
+}
+
+.nav .menu ul ul li {
+    position: relative;
+    display: block;
+}
+
+.nav .menu li:hover > ul {
+    display: block;
+}
+
+.nav .menu > ul > li:last-child ul {
+    left: auto;
+    right: 0;
+}
+
+/* IE8 fix class last-item injected by javascript */
+.nav .menu .last-item ul {
+    right: 0;
+    left: auto;
+}
+
+.nav .menu li li a {
+    color: #231f20;
+    padding: .75em 1em;
+    /*background: #fefefe;
+    text-transform: uppercase;*/
+    display: block;
+    width: 185px;
+
+}
+
+.nav .menu li li a:hover {
+    color: #fff;
+    background: #231f20;
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+    header .top-icons .mobile-toggle {
+        display: inline-block;
+    }
+
+    /* mobile navigation */
+    .nav {
+	    position: relative;
+	    z-index: 900;
+	    border:0;
+	    margin:0 -15px;
+	    float:none;
+	}
+
+    .nav .menu {
+        display: none;
+        width: 100%;
+        position:absolute;
+        right:0;
+        background: #fff;
+    }
+
+    .nav .menu > ul {
+        display: block;
+    }
+
+    .nav .menu > ul li {
+        display: block;
+        border: solid #231f20;
+        border-width:1px 0 0;
+    }
+
+    .nav .menu > ul > li:hover, .nav .menu > ul > li:active  {
+    border:solid #231f20;
+    border-width:1px 0 0;
+    }
+
+    .nav .menu ul ul {
+        border:0;
+        margin:0;
+        box-shadow:inset 0 2px 3px #333;
+        background:#fff;
+    }
+
+    /*.nav .menu > ul ul li {
+        border: solid #fff;
+        border-width:1px 0 0;
+    }*/
+
+    .nav .menu li > ul,
+    .nav .menu li:hover > ul {
+        display: none;
+    }
+
+    .nav .menu > ul > li > a {
+    	color: #231f20;
+    }
+
+    .nav .menu > ul > li:hover > a {
+        color: #fff;
+    }
+
+    .nav .menu .newvehicles > a:before,
+    .nav .menu .preowned > a:before,
+    .nav .menu .specials > a:before {
+        display: none;
+    }
+
+    .nav .menu > ul li a {
+        line-height: 3em;
+    }
+
+    .nav .menu ul ul {
+        position: static;
+    }
+
+    .nav .menu li li a {
+        padding: 0;
+        text-align: center;
+        line-height: 3em;
+        font-size: 16px;
+        width: auto;
+        color:#231f20;
+    }
+
+    .nav .menu .has-sub > a:after {
+        content: "+";
+        display: block;
+        font-size: 1.5em;
+        position: absolute;
+        top: 0px;
+        right: 20px;
+    }
+
+    .nav .menu .has-sub > a.open:after {
+        content: "-";
+        top: -2px;
+        right: 23px;
+    }
+
+    .nav .menu .pNav > .has-sub > a:after {
+        border-top-color: #fff;
+    }
+    
+}
+
+@media only screen and (max-width: 641px) {
+    .nav .menu {
+        /*position:static;*/
+        right:0;
+        left:0;
+        box-shadow: 0 3px 2px #333;
+    }
+}
+
+/*--=======Welcome Text========--*/
+#seo-container {
+	float:left;
+	clear:left;
+}
+
+.welcome {
+    padding: 20px;
+    background: rgba(255,255,255,.5);
+    color:#231f20;
+}
+
+.welcome .readmore {
+  margin: 0 0 2em;
+}
+
+.welcome .overflow {
+    overflow:hidden;
+    height:224px;
+}
+
+.welcome .fullheight {
+    overflow:visible;
+    height:auto;
+}
+
+.welcome .hide {
+    display:none;
+}
+
+.welcome h1 {
+    font-size: 2em;
+    color: #231f20;
+}
+
+@media screen and (max-width: 767px) {
+    .welcome h1 {
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 641) {
+    .welcome {
+    padding: 20px;
+}
+}
+
+.welcome p,
+.welcome ul,
+.welcome ol {
+    font-size: 0.9em;
+}
+
+.welcome p {
+    margin:0 0 2em;
+}
+
+.welcome h2 {
+    margin: 10px 0;
+}
+
+.welcome .toggle {
+    margin:.5em 0 0;
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.welcome .toggle span {
+    padding: 0.5em;
+    color:#231f20;
+}
+
+.welcome .toggle span:hover {
+    color:#d51d29;
+}
+
+/*--======= Home =======--*/
+
+.home-content {
+	background:#fff;
+}
+
+/*--======= Vehicle Scroller Content =======--*/
+
+.scroller-container {
+    box-shadow: inset 0 10px 25px -12px #000
+}
+
+.vehicle-type-selector {
+    max-width:90%;
+}
+
+.vehicle-type-selector ul {
+    border:solid 1px #231f20;
+    display:table;
+    padding:0;
+    margin:3em 0 2em;
+}
+
+.vehicle-type-selector ul span {
+    display:table-cell;
+    width:20%;
+}
+
+
+.vehicle-type-selector ul span:hover,
+.vehicle-type-selector ul span.active {
+    background:#d51d29;
+    color:#fff;
+}
+
+.vehicle-type-selector ul li{ 
+    border:solid #231f20;
+    border-width:0 1px 0 0;
+    text-align:center;
+    margin:.25em 0;
+    line-height:2em;
+    
+}
+
+.vehicle-type-selector ul span:last-child li{
+    border-width:0;
+}
+
+.vehicle-scroller .row {
+    padding:0;
+}
+
+.vehicle-scroller {
+    position:relative;
+}
+
+.slick-slider {
+	margin:0;
+	text-align:center;
+}
+
+.vehicle-scroller .veh-thumb {
+    background: url(../images/ToyotaModels.png) 0 0 no-repeat;
+    width:  100%;
+    max-width: 19em;
+    height: 8em;
+    margin:0 auto;
+}
+
+.model-container {
+    width:100%;
+    overflow: hidden;
+}
+
+.vehicle-scroller .slick-slide span {
+    color:#231f20;
+}
+
+.vehicle-scroller .vehicle-box-container {
+    padding:0;
+}
+
+.vehicle-scroller .slick-slide .veh-container {
+        padding: 1em .5em 0;
+        min-height: 20em;
+        display: block;
+        margin: .5em;
+        transition: all .5s ease-in-out;
+    }
+
+.vehicle-scroller .slick-slide span .model-name {
+    font-size:1.2em;
+    border:solid #231f20;
+    border-width:0 0 2px;
+}
+
+.vehicle-scroller p {
+    margin:0 0 1em;
+}
+
+.vehicle-scroller a.button {
+    background:transparent;
+    color:#231f20;
+    display:inline-block;
+    border:solid 2px #231f20;
+    padding:.5em 1em;
+    font-size:1.1em
+}
+
+.vehicle-scroller .button i {
+    border:solid #231f20;
+    border-width:0 0 0 2px;
+    margin: 0 0 0 .5em;
+    padding: 0 0 0 .5em;
+    line-height: 1.5em;
+
+}
+
+.vehicle-scroller a.button:hover {
+    background:#d51d29;
+    color:#fff;
+    border-color:#d51d29;
+}
+
+.vehicle-scroller a.button:hover i {
+    border-color:#fff;
+}
+
+/* Models */
+.veh-thumb.model-1 {
+    background-position: -745px -125px;
+}
+.veh-thumb.model-2 {
+    background-position: -498px -125px;
+}
+.veh-thumb.model-3 {
+    background-position: -10px -125px;
+}
+.veh-thumb.model-4 {
+    background-position: -254px -10px;
+}
+.veh-thumb.model-5 {
+    background-position: -10px -585px;
+}
+.veh-thumb.model-6{
+    background-position: -254px -585px;
+}
+.veh-thumb.model-7 {
+    background-position: -498px -585px;
+}
+.veh-thumb.model-8 {
+    background-position: -254px -470px;
+}
+.veh-thumb.model-9 {
+    background-position: -742px -10px;
+}
+.veh-thumb.model-10 {
+    background-position: -10px -240px;
+}
+.veh-thumb.model-11 {
+    background-position: -10px -10px;
+}
+.veh-thumb.model-12 {
+    background-position: -498px -470px;
+}
+.veh-thumb.model-13{
+    background-position: -498px -240px;
+}
+.veh-thumb.model-14 {
+    background-position: -254px -125px;
+}
+.veh-thumb.model-15 {
+    background-position: -498px -10px;
+}
+.veh-thumb.model-16 {
+    background-position: -254px -240px;
+}
+.veh-thumb.model-17 {
+    background-position: -10px -355px;
+}
+.veh-thumb.model-18{
+    background-position: -254px -355px;
+}
+
+.veh-thumb.model-19 {
+    background-position: -498px -355px;
+}
+.veh-thumb.model-20{
+    background-position: -10px -470px;
+}
+/* End Models */
+
+
+.veh-pagenation {
+    position:relative;
+    z-index:999;
+}
+
+
+.veh-pagenation > span {
+    position:absolute;
+    top: 1.5em;
+    font-size: 3em;
+    cursor:pointer;
+    color:#231f20;
+}
+
+.veh-pagenation > span:hover {
+    color:#d51d29;
+}
+
+.veh-pagenation > span.prev {
+    left:-1em;
+}
+
+.veh-pagenation > span.next {
+    right:-1em;
+}
+
+@media screen and (min-width:940px) {
+    .vehicle-scroller a.button {
+        display:none;
+        padding:.5em 2em;
+    }
+
+    .vehicle-scroller .slick-slide:hover .button {
+    display:inline-block;
+}
+
+    .vehicle-scroller .slick-slide .veh-container {
+        transition: all .5s ease-in-out;
+    }
+
+
+    .vehicle-scroller .slick-slide:hover .veh-container {
+        box-shadow: 0 0px 5px 1px #000;
+        background: #f5f5f5;
+        opacity:1;
+
+    }
+
+    .model-container .veh-container {
+        transition: all .5s ease-in-out;
+    }
+
+    .model-container:hover .veh-container {
+        opacity: .5;
+    }
+
+}
+
+@media screen and (max-width:1200px) {
+    .veh-pagenation > span {
+        color: #231f20;
+    text-shadow: 1px 1px 10px #fff;
+    }
+    .veh-pagenation > span.prev {
+        left:1em;
+    }
+
+.veh-pagenation > span.next {
+        right:1em;
+    }
+}
+
+@media screen and (max-width:940px) {
+    .veh-pagenation > span {
+        display:none !important;
+    }
+
+}
+
+
+@media screen and (max-width:780px) {
+    .scroller-padding {
+    padding: 0 3em;
+    }
+
+    .vehicle-scroller .slick-slide .veh-container {
+        padding:1em 1em 0;
+    }
+}
+
+@media screen and (max-width:780px) and (min-width: 480px) {
+    .vehicle-box-container {
+        width:80%;
+        margin:0 auto;
+    }
+    .vehicle-scroller .slick-slide {
+        min-width: 17em;
+        /*margin:0 3em;*/
+    }
+}
+
+@media only screen and (max-width:641px) {
+    .scroller-container {
+        box-shadow:0 0 0;
+    }
+}
+
+@media screen and (min-width:480px) {
+    .vehicle-type-selector {
+        max-width:80%;
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+    .vehicle-scroller .slick-slide {
+        min-width: 18em;
+        margin:0em 2em;
+    }
+
+}
+
+@media only screen and (min-width:1020px) {
+    .vehicle-type-selector {
+        max-width:60%;
+    }
+}
+
+
+
+/*--======= PreOwned =======--*/
+
+.pre-owned-container {
+    background:url('../images/PreOwned-bg.jpg') center center no-repeat;
+    background-size: cover;
+    color:#fff;
+    padding:2em 0;
+}
+
+.pre-owned-container h4 {
+    font-size: 1.5em;
+    line-height: 1.4em;
+}
+
+.pre-owned-container h2 {
+    border: solid #fff 2px;
+    font-size: 1.8em;
+    line-height: 1.4em;
+    display: inline-block;
+    padding: .25em 1em;
+    margin: 0 0 1em;
+}
+
+.pre-owned-search {
+    position:relative;
+}
+
+.pre-owned-search input[type="search"],
+.pre-owned-cta a{
+    padding: 0 .5em;
+    background: transparent;
+    border: solid 2px #fff;
+    font-size: 1.1em;
+    line-height: 3em;
+    height: auto;
+    color:#fff;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 2.65rem;
+}
+
+
+.pre-owned-search i {
+    position: absolute;
+    font-size: 1.8em;
+    color: #d51d29;
+    background: #fff;
+    right: 0;
+    top: 0;
+    line-height: 2em;
+    padding: 0 .5em;
+    cursor:pointer;
+}
+
+.pre-owned-search i:hover {
+    color:#333;
+}
+
+.pre-owned-cta a.button:hover {
+    background:#fff;
+    color: #d51d29;
+}
+
+.pre-owned-cta a.button span {
+    border:solid #fff;
+    border-width:0 2px 0 0;
+    margin: 0 .5em 0 0;
+    padding: 0 .5em 0 0;
+}
+
+.pre-owned-cta a.button:hover span {
+    border-color:#d51d29;
+}
+
+
+@media only screen and (max-width:1024px) {
+    .pre-owned-container {
+        font-size: .95em;
+    }
+    .pre-owned-container h2 {
+        margin:0;
+    }
+
+    .pre-owned-container .column-1 {
+        margin:1em 0 3em;
+    }
+
+    .pre-owned-search {
+    margin: 3em 0 0;
+    }
+}
+
+@media only screen and (max-width:640px) {
+    .pre-owned-container .column-1{
+        text-align:center;
+    }
+}
+
+
+/*--======= Contact Content =======--*/
+
+.contact-section  h5 {
+    border:solid #231f20;
+    border-width:0 0 2px;
+    line-height: 1.5em;
+    padding: 0 6em;
+    display: inline-block;
+}
+
+.contact-section  h3 {
+    line-height:1.8em;
+    font-size: 1.6em;
+}
+
+.contact-container p {
+    text-align:left;
+    font-size:1.1em;
+    line-height: 1.6em;
+}
+
+.contact-container input[type="text"], .contact-container input[type="tel"], .contact-container input[type="email"], .contact-container textarea {
+    padding: 0 .5em;
+    background: transparent;
+    border: solid #333;
+    border-width:0 0 2px;
+    font-size: 1.1em;
+    height: auto;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 1.65rem;
+    box-shadow: inset 0 0 0 rgba(255,255,255, 0.1);
+}
+
+.contact-container input[type="submit"] {
+    float:none;
+    display:block;
+    margin:0 auto;
+    background:#231f20;
+    padding:.5em 1em;
+}
+
+.contact-container input[type="submit"]:hover {
+    background:#d51d29;
+}
+
+/*--======= Map Content =======--*/
+.map-container {
+    position: relative;
+    z-index: 0;
+    /*margin-top: -3%;*/
+}
+.home-content #map-canvas {
+    display: block;
+    width: 100%;
+    height: 320px;
+    /*z-index: 104;*/
+    margin:0;
+    border:0;
+}
+
+.directions-box {
+    position:relative;
+    border:solid #231f20 1px;
+    margin:2em 1em;
+}
+
+.directions-box input {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin:0;
+    border:0;
+}
+
+.directions-box i {
+    position:absolute;
+    right:-1px;
+    font-size:2.25em;
+    background:#231f20;
+    color:#fff;
+    top:-1px;
+    line-height:1.45em;
+    padding:0 .5em;
+}
+
+.directions-box i:hover {
+    background:#d51d29;
+}
+
+
+
+/*--======= Footer =======--*/
+footer {
+    font-size: .95em;
+  line-height: 1.5em;
+  padding: 1em 0 3em;
+  background:#d51d29;
+  box-shadow:inset 0 10px 25px -12px #000;
+  color:#fff;
+  text-align:center;
+}
+
+
+footer a {color: #fff;}
+
+footer a:hover {color: #231f20;}
+
+footer ul.social-icons {
+    margin:1em 0 1.5em;
+}
+
+footer ul.social-icons li {
+    display:inline-block;
+    background:#fff;
+    color:#d51d29;
+    padding:.6em 0;
+    font-size:1.2em;
+    text-align: center;
+    margin:0 .25em;
+    width: 2.25em;
+    height: 2.25em;    
+}
+
+footer ul.social-icons li.first-child {
+    margin:0 .25em 0 0;
+}
+
+footer ul.social-icons li:hover{
+    background: #231f20;
+}
+
+footer .pNav > .home {
+    display:none;
+}
+
+footer .pNav > li {
+    width: 16.66%;
+    float: left;
+    padding: 10px;
+}
+
+footer .pNav > li > a {
+    font-weight: bold;
+    line-height: 2.5em;
+}
+
+footer .bottom-nav {margin-bottom: 1em;}
+
+footer .bottom-nav li {display: inline;}
+
+footer .bottom-nav li + li {
+    /*border-left: 1px solid;*/
+    margin-left:2px;
+    padding-left:5px
+}
+
+footer .bottom-nav li.dot:after {
+    content:"|";
+    margin:0 0 0 1em;
+}
+
+footer .contactinfo {text-align: right;}
+
+footer .contactinfo .dealerinfo > span {display: block;}
+
+footer .contactinfo .dealerinfoname {display: none;}
+
+@media only screen and (max-width: 767px) {
+
+    footer ul ul {
+        display: none;
+    }
+
+    footer .pNav > li {
+        width: auto;
+        padding: 0 0 0 15px;
+    }
+
+    footer .contactinfo {text-align: center;}
+
+}
+
+/*--========Scroll to Top======--*/
+
+
+/*--======= General large Only Screen =======--*/
+
+
+
+
+/*--======= General Medium Screen =======--*/
+
+
+/*--======= Medium Screen About Content =======--*/
+
+
+
+
+/*--========Scroll to Top Medium Screen======--*/
+
+
+/*--======= Medium Screen Contact Content =======--*/
+
+
+/*--======= General Medium Screen Only =======--*/
+
+
+/*--======= General Small Screen =======--*/
+
+
+/*--========Logo Small Screen======--*/
+
+
+
+
+/*--======= Small Screen Contact Content =======--*/
+
+
+
+
+/*--======== Small Screen Footer =====*/
+
+
+/*--======== Small Screen Portfolio Pages =====*/
+
+
+
+/*--======== Small Screen Thank You =====*/
+

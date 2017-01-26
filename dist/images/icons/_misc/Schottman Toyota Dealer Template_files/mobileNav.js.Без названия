@@ -1,0 +1,112 @@
+/*
+* thorsponsive - mobilenav.js V1.0.26.9.2014
+* Copyright 2014, Drew Thorson
+* www.drewthorson.com
+* Last Updated: 26 SEP 2014
+*/
+
+$(function() {
+	// adds class to ul if it has children
+	$('.nav .menu li').each(function () {
+		if($(this).children('ul').length) {
+			$(this).addClass('has-sub');
+		}
+	});
+	// shows menu on mobile clicked
+	$('.mobile-toggle').click( function(e) {
+		
+		if ($(this).siblings(".active").length && $(this).siblings().children("div.visible").length) {
+			console.log("mobileNav js working");
+	       $(".contact.active").removeClass("active").children("div").removeClass(".visible").animate({ width: "toggle" }, 700);
+	    }
+	    $(this).toggleClass("active");
+	    $('.nav .menu').animate({ width: "toggle" }, 700);
+	});
+
+	responsiveMobileMenu();
+
+    // see whether device supports touch events (a bit simplistic, but...)
+    var hasTouch = ("ontouchstart" in window);
+    var iOS5 = /iPad|iPod|iPhone/.test(navigator.platform) && "matchMedia" in window;
+     
+    // hook touch events for drop-down menus
+    // NB: if has touch events, then has standards event handling too
+    // but we don't want to run this code on iOS5+
+    if (hasTouch && document.querySelectorAll && !iOS5) {
+        var i, len, element,
+            dropdowns = document.querySelectorAll(".pNav li.has-sub > a");
+     
+        function menuTouch(event) {
+            // toggle flag for preventing click for this link
+            var i, len, noclick = !(this.dataNoclick);
+     
+            // reset flag on all links
+            for (i = 0, len = dropdowns.length; i < len; ++i) {
+                dropdowns[i].dataNoclick = false;
+            }
+     
+            // set new flag value and focus on dropdown menu
+            this.dataNoclick = noclick;
+            this.focus();
+        }
+     
+        function menuClick(event) {
+            // if click isn't wanted, prevent it
+            if (this.dataNoclick) {
+                event.preventDefault();
+            }
+        }
+     
+        for (i = 0, len = dropdowns.length; i < len; ++i) {
+            element = dropdowns[i];
+            element.dataNoclick = false;
+            element.addEventListener("touchstart", menuTouch, false);
+            element.addEventListener("click", menuClick, false);
+        }
+    }
+});
+
+function responsiveMobileMenu () {
+	if ($('.mobile-toggle').is(':visible')) {
+		// prevents on click redundancy
+		$('.has-sub > a').off('click');
+		// prevents parent links of children from going to link and shows dropdown
+		$('.has-sub > a').on('click', function (e) {
+			e.preventDefault();
+			if ($(this).next('ul').hasClass('open')) {
+				$(this).removeClass('open');
+				$(this).next('ul').removeClass('open').slideUp();
+			} else {
+				$(this).addClass('open');
+				$(this).next('ul').addClass('open').slideDown();
+			}
+		});
+	} else {
+		// unbinds click to menu items in desktop
+		$('.has-sub > a').off('click');
+		// fixes issue when going from mobile to desk back to mobile
+		$('.has-sub > ul').removeClass('open');
+		// if nav items closed in mobile mode fixes it when resized to desktop
+		$('.nav .menu, .nav .menu ul').css({'display':'','overflow':''});
+	}
+}
+
+var navFix;
+var currentHeight;
+var currentWidth;
+ 
+$(window).resize(function () {
+	// prevents issue with IE8 and window resize infinite loop
+	var windowHeight = $(window).height();
+	var windowWidth = $(window).width();
+ 
+	if (currentHeight == undefined || currentHeight != windowHeight
+	      || currentWidth == undefined || currentWidth != windowWidth) {
+	 
+		clearTimeout(navFix);
+		navFix = setTimeout(responsiveMobileMenu, 200);
+
+		currentHeight = windowHeight;
+		currentWidth = windowWidth;
+	}
+});
