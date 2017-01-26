@@ -799,11 +799,10 @@ var filtered = false;
 $("#price__controls li").on('click', function(e){
     e.preventDefault();
 
-    var filtername = $(this).attr('data-filter');
+    var filtername = $(this).attr('id');
     var $bestPrice =  $('#best-price');
 
-    console.log(filtername);
-
+    
     if (filtered === false) {
         $bestPrice.slick('slickUnfilter');
         $bestPrice.slick('slickFilter', '.' + filtername);
