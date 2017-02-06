@@ -678,6 +678,159 @@ a:hover {
     margin-bottom: 10px;
   }
 }
+.title-page {
+  text-align: center;
+}
+.title-page h1 {
+  font-size: 26px;
+  margin-bottom: 38px;
+}
+
+.about-us__content h2 {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.about-us__content h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.about-us__content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 21px;
+}
+.about-us__content p:last-child {
+  margin-bottom: 0;
+}
+.about-us__content figure {
+  max-width: 460px;
+}
+
+.page__section {
+  margin-bottom: 20px;
+}
+
+.about-premium {
+  margin-bottom: 30px;
+}
+.about-premium:before, .about-premium:after {
+  content: "";
+  display: table;
+}
+.about-premium:after {
+  clear: both;
+}
+
+.about-img-left {
+  float: left;
+  margin-right: 30px;
+}
+
+.about-img-right {
+  float: right;
+  margin-left: 30px;
+}
+
+.team__list {
+  font-size: 0;
+  background: #f0efec;
+}
+
+.team__item {
+  display: inline-block;
+  vertical-align: top;
+  width: 33.3333%;
+  font-size: 16px;
+  text-align: center;
+}
+
+.team__item_text {
+  background: #fff;
+}
+
+.our-team table {
+  width: 100%;
+}
+.our-team td {
+  text-align: center;
+  background: #f0efec;
+  padding-top: 20px;
+  vertical-align: top;
+  width: 33.33333333%;
+}
+.our-team td img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  vertical-align: bottom;
+}
+.our-team td div:first-child {
+  background: #f0efec;
+  height: 320px;
+  overflow: hidden;
+  line-height: 320px;
+}
+.our-team td div:last-child {
+  overflow: hidden;
+  background: #fff;
+  padding: 26px 0;
+  height: 97px;
+}
+.our-team td span {
+  display: block;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.certificates__list {
+  position: relative;
+}
+.certificates__list:before, .certificates__list:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  background: rgba(255, 255, 255, 0.9);
+  width: 50px;
+  height: 100%;
+  z-index: 1;
+}
+.certificates__list:before {
+  left: 0;
+}
+.certificates__list:after {
+  right: 0;
+}
+
+.certificates__button_prev {
+  z-index: 1;
+}
+
+.certificates__button_next {
+  z-index: 1;
+}
+
+.certificates__link {
+  display: block;
+}
+
+.certificates__image {
+  max-width: 90%;
+  max-height: 90%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .our-team {
+    display: none;
+  }
+
+  .about-us__content figure {
+    float: none;
+    margin: 0 auto 20px;
+  }
+}
 .advantages {
   margin-bottom: 38px;
 }
@@ -5886,7 +6039,7 @@ input[type="submit"] {
   position: relative;
 }
 
-.cart__button.items_added {
+.cart__button {
   border: 1px solid transparent;
 }
 .cart__button.items_added:hover {
@@ -6367,7 +6520,7 @@ input[type="submit"] {
   transition: all 0.1s linear;
 }
 .nav__item_link:hover, .nav__item_link:focus {
-  background: #17a66e;
+  background: #108c4f;
   color: #ffffff;
   text-decoration: none;
 }
@@ -6556,34 +6709,38 @@ input[type="submit"] {
   text-align: center;
   display: block;
   border-bottom: 1px solid #f1f1f1;
-  padding: 27px 0 40px;
+  padding: 27px 0 35px;
 }
 .page__pagination .page__pagination_list {
   display: inline-block;
   vertical-align: top;
 }
 .page__pagination .page__pagination_item {
-  width: 33px;
-  height: 33px;
-  line-height: 33px;
+  width: 32px;
+  height: 32px;
   display: inline-block;
   vertical-align: middle;
   position: relative;
   overflow: hidden;
+  text-align: center;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.6);
 }
-.page__pagination .page__pagination_link {
+.page__pagination .page__pagination_item a {
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
   position: absolute;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  display: block;
+  line-height: 30px;
 }
-.page__pagination .page__pagination_link:focus {
+.page__pagination .page__pagination_item.active {
   border: 1px solid #22b983;
   background: #fdfdfd;
-}
-.page__pagination .page__pagination_link:focus .pagination__mark {
   font-family: 'robotobold', sans-serif;
   color: #22b983;
 }
@@ -6594,9 +6751,6 @@ input[type="submit"] {
   bottom: 0;
   margin: auto;
   position: absolute;
-  text-align: center;
-  font-size: 24px;
-  color: rgba(0, 0, 0, 0.6);
 }
 .page__pagination .pagination__item_prev .page__pagination_link:focus,
 .page__pagination .pagination__item_next .page__pagination_link:focus {
@@ -8730,35 +8884,35 @@ input[type="submit"] {
   right: 40px;
 }
 
-.similar__button-prev, .viewed__products-prev {
+.similar__button-prev, .viewed__products-prev, .certificates__button_prev {
   background: url('../images/icons/_misc-s662add487b.png') 0 -5041px no-repeat;
   height: 62px;
   width: 42px;
   left: -15px;
 }
-.similar__button-prev:hover, .viewed__products-prev:hover {
+.similar__button-prev:hover, .viewed__products-prev:hover, .certificates__button_prev:hover {
   background: url('../images/icons/_misc-s662add487b.png') 0 -5173px no-repeat;
   height: 62px;
   width: 42px;
 }
-.similar__button-prev:active, .viewed__products-prev:active {
+.similar__button-prev:active, .viewed__products-prev:active, .certificates__button_prev:active {
   background: url('../images/icons/_misc-s662add487b.png') 0 -5833px no-repeat;
   height: 62px;
   width: 42px;
 }
 
-.similar__button-next, .viewed__products-next {
+.similar__button-next, .viewed__products-next, .certificates__button_next {
   background: url('../images/icons/_misc-s662add487b.png') 0 -4777px no-repeat;
   height: 62px;
   width: 42px;
   right: -15px;
 }
-.similar__button-next:hover, .viewed__products-next:hover {
+.similar__button-next:hover, .viewed__products-next:hover, .certificates__button_next:hover {
   background: url('../images/icons/_misc-s662add487b.png') 0 -4909px no-repeat;
   height: 62px;
   width: 42px;
 }
-.similar__button-next:active, .viewed__products-next:active {
+.similar__button-next:active, .viewed__products-next:active, .certificates__button_next:active {
   background: url('../images/icons/_misc-s662add487b.png') 0 -5437px no-repeat;
   height: 62px;
   width: 42px;
@@ -8775,6 +8929,7 @@ input[type="submit"] {
   padding: 15px 0px;
   border-bottom: 1px solid #f1f1f1;
   line-height: 40px;
+  margin-bottom: 30px;
 }
 .subscription:before, .subscription:after {
   content: "";
