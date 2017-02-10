@@ -3787,47 +3787,25 @@ input[type="submit"] {
 .order__chose-text {
   font-size: 0;
 }
-.order__chose-text:before {
-  content: "";
+
+.order__chose_img,
+.order__chose-span {
   display: inline-block;
   vertical-align: middle;
+}
+
+.order__chose_img {
   margin-right: 10px;
 }
 
 .order__chose-span {
   font-size: 14px;
   line-height: 16px;
-  display: inline-block;
-  vertical-align: middle;
   width: 108px;
 }
 
 .order__choose-input:checked + .order__chose-text {
   opacity: 0.5;
-}
-
-.order__choose-cash .order__chose-text:before {
-  background: url('../images/icons/_misc-s662add487b.png') 0 -3184px no-repeat;
-  height: 37px;
-  width: 37px;
-}
-
-.order__choose-transfer .order__chose-text:before {
-  background: url('../images/icons/_misc-s662add487b.png') 0 -3495px no-repeat;
-  height: 31px;
-  width: 37px;
-}
-
-.order__choose-invoice .order__chose-text:before {
-  background: url('../images/icons/_misc-s662add487b.png') 0 -3401px no-repeat;
-  height: 24px;
-  width: 37px;
-}
-
-.order__choose-cashless .order__chose-text:before {
-  background: url('../images/icons/_misc-s662add487b.png') 0 -3291px no-repeat;
-  height: 40px;
-  width: 40px;
 }
 
 .payment__button {
@@ -3885,8 +3863,8 @@ input[type="submit"] {
 
 @media screen and (min-width: 320px) and (max-width: 479px) {
   .order__choose-label {
-    width: 100%;
     margin-bottom: 15px;
+    width: 100%;
   }
   .order__choose-label:last-child {
     margin-bottom: 0;
