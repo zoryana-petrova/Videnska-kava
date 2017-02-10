@@ -645,27 +645,28 @@ $(function () {
         // Subscribe to input change events (to those who a visible know)
         onStepChange($step);
     })    
-    
-    $editAction.on("click", function (e) {
-        var $currentStep = $(this).parents('.cart__order_item');
+
+
+    $editAction.on("click", function(e){
+        var $currentStep = $(this).parents('.cart__order_item');   
 
         $cartSteps.removeClass('active');
         $currentStep.removeClass('checked')
-                    .addClass('active');
-        
-        offStepChange($cartSteps);    
-        onStepChange($currentStep)
+                    .addClass('active');          
 
+        offStepChange($cartSteps);    
+        onStepChange($currentStep);
         return false;
     });
-    
+
+
     $stepNextAction.on("click", function (e) {
         var $currentStep = $(this).parents('.cart__order_item');
 
         if(validateStep($currentStep, true)){
             $cartSteps.removeClass('active');
             $currentStep.addClass('checked');
-            $currentStep.next().addClass('active');
+            $currentStep.next().addClass('active').removeClass('checked');
 
             offStepChange($cartSteps);    
             onStepChange($currentStep.next())
@@ -753,6 +754,20 @@ $(function () {
 $(function () {
     $('.certificates__link').colorbox({rel: 'certificates'});
 });
+
+/*---------cart animate-------*/
+$(function () {
+    var $cart = $(".cart__button_icon"),
+        animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
+    $cart.on('added.product', function(){
+        $(this).addClass('animated rubberBand').one(animationEnd, function() {
+            $(this).removeClass('animated rubberBand');
+        });
+    });
+});
+
+
 $(function () { 
         gallerySlickOpts = {
             dots: true,
@@ -882,34 +897,47 @@ $(function () {
     $('#best-price').slick(bestPriceAllSlickOpts);
 });
 
-//filter for best price
+//filter for best price start
 var filtered = false;
 
 $("#price__controls li").on('click', function(e){
     e.preventDefault();
 
-    var filtername = $(this).attr('id');
-    var $bestPrice =  $('#best-price');
-
+    var filtername = $(this).attr('id'),
+        $slider =  $('#best-price'),
+        $pagination = $slider.siblings('.paginations'),
+        slick = $slider.slick('getSlick');  
+    
+    $slider.slick('slickUnfilter');
+    $slider.slick('slickFilter', '.' + filtername);
     
     if (filtered === false) {
-        $bestPrice.slick('slickUnfilter');
-        $bestPrice.slick('slickFilter', '.' + filtername);
-        $bestPrice.slick('slickGoTo', 0);
-      filtered = true;
-    } else {
-        $bestPrice.slick('slickUnfilter');
-        $bestPrice.slick('slickFilter', '.' + filtername);
-      filtered = false;
+        $slider.slick('slickGoTo', 0);      
     }
+
+    filtered = !filtered
+    debugger;
+        slick.slideCount > slick.options.slidesToShow ?  $pagination.show() : $pagination.hide(); 
+    
               
     if ($("#price__controls li.active").length) {
         $("#price__controls li.active").removeClass("active");
     }
-
     $(this).toggleClass("active");
 });
 
+$(window).on("resize", function(){
+    var $slider =  $('#best-price'),
+        $pagination = $slider.siblings('.paginations'),
+        slick = $slider.slick('getSlick');
+
+    var wid = $(window).width();
+    if (wid > 1199 || wid < 768) {
+        return;
+    }    
+    slick.slideCount > slick.options.slidesToShow ?  $pagination.show() : $pagination.hide();
+});
+//filter for best price end
 
 $(function () { 
     bestPriceAllSlickOpts = {

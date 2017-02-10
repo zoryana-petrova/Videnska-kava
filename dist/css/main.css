@@ -1370,9 +1370,13 @@ a:hover {
   padding: 8px 32px;
   border: 1px solid transparent;
 }
-.best__price .products__item {
-  border-bottom: none;
+.best__price .best__price_item {
+  border: 1px solid #f1f1f1;
+  border-left: none;
   height: 330px;
+}
+.best__price .products__item:hover {
+  border-bottom: 1px solid #f1f1f1;
 }
 .best__price .products__item:hover .over__wraper {
   overflow: hidden;
@@ -1383,8 +1387,7 @@ a:hover {
   top: 0;
   min-height: 300px;
   box-shadow: none;
-  border: 1px solid transparent;
-  border-right: 1px solid #f1f1f1;
+  border: none;
 }
 .best__price .products__item:hover .products__img_wrap {
   height: 184px;
@@ -1395,10 +1398,23 @@ a:hover {
 }
 .best__price .products__item_long {
   min-height: 300px;
+  border: none;
 }
 .best__price .best__price_list {
   font-size: 0;
-  border: 1px solid #f1f1f1;
+  position: relative;
+  margin-left: -2px;
+}
+.best__price .best__price_list:before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  background: #f1f1f1;
+  left: 0;
+  top: 0;
+  z-index: 1;
 }
 .best__price .products__label_content {
   right: 2px;
@@ -1486,6 +1502,7 @@ a:hover {
   .best__price .products__item .products__item_long,
   .best__price .products__item:hover .products__item_long {
     padding-top: 60px;
+    border: none;
   }
   .best__price .paginations {
     display: none;
@@ -1550,7 +1567,6 @@ a:hover {
   background: #ffffff;
 }
 .products__item:hover {
-  border-bottom: 1px solid transparent;
   cursor: pointer;
 }
 .products__item:hover .over__wraper {
@@ -1598,7 +1614,7 @@ a:hover {
   font-size: 28px;
 }
 .products__item:hover .products__item-inner {
-  padding: 0 15px 10px;
+  padding: 0 15px 7px;
 }
 .products__item:hover .sale__text:before, .products__item:hover .sale__text:after {
   top: 4px;
@@ -2142,6 +2158,9 @@ a:hover {
   margin-bottom: 15px;
 }
 
+.reviews__container {
+  margin-bottom: 40px;
+}
 .reviews__container .reviews {
   border-bottom: 1px solid #f1f1f1;
 }
@@ -5616,13 +5635,13 @@ input[type="submit"] {
   transition: all 0.2s ease-out;
   margin-top: -50px;
 }
+.header__top .cart__button .cart__button_icon {
+  float: none;
+}
 .header__top .cart__button .cart__button_icon:before {
   background: url('../images/icons/_misc-s662add487b.png') 0 -2650px no-repeat;
   height: 36px;
   width: 37px;
-}
-.header__top .cart__button_icon {
-  float: none;
 }
 .header__top .cart__button_icon.in_cart .cart__button_span {
   display: block;
@@ -7272,10 +7291,6 @@ input[type="submit"] {
 
 .review__date {
   float: right;
-}
-
-.reviews {
-  margin-bottom: 40px;
 }
 
 .review__answer {
