@@ -621,12 +621,13 @@ $(function () {
     function getEdit(editClick, $steps){
         $steps.each(function(ind, step){
             var $step = $(step);
-
+                
             if($step.hasClass('active')){
                 return;
             }
             $step.addClass('checked');
-        })
+        });
+
     };
 
     var $cartForm = $('form#cart_order'),

@@ -3392,6 +3392,7 @@ input[type="submit"] {
 
 .order__discount_content {
   display: none;
+  line-height: 38px;
 }
 .order__discount_content:before, .order__discount_content:after {
   content: "";
@@ -3407,6 +3408,7 @@ input[type="submit"] {
 .order__discount {
   float: right;
   font-size: 0;
+  margin-left: 5px;
 }
 
 .order__input_wrap {
@@ -3658,7 +3660,6 @@ input[type="submit"] {
 
 .order__payment_content {
   padding: 16px 30px;
-  border: 1px solid #dadce1;
   background: #ffffff;
 }
 
