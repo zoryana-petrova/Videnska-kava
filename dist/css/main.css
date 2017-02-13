@@ -3329,6 +3329,7 @@ input[type="submit"] {
   display: inline-block;
   vertical-align: middle;
   white-space: nowrap;
+  opacity: 0.5;
 }
 .cart__choose-label .cart__chose-text:before, .order__choose-label .cart__chose-text:before {
   content: "";
@@ -3363,7 +3364,7 @@ input[type="submit"] {
   clear: both;
 }
 .form-group .cart__choose-input:checked + .cart__chose-text, .form-group .order__choose-input:checked + .cart__chose-text {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .cart__delivery-total {
@@ -3644,13 +3645,13 @@ input[type="submit"] {
     width: 40%;
   }
 }
-.order__payment_header,
+.order__item_header,
 .order-title {
   text-align: center;
   color: #000000;
   margin-bottom: 20px;
 }
-.order__payment_header .title__text,
+.order__item_header .title__text,
 .order-title .title__text {
   font-size: 1.5em;
 }
@@ -3786,6 +3787,11 @@ input[type="submit"] {
 
 .order__chose-text {
   font-size: 0;
+  opacity: 0.5;
+}
+
+.cart__order .order__chose-text {
+  opacity: 1;
 }
 
 .order__chose_img,
@@ -3805,7 +3811,7 @@ input[type="submit"] {
 }
 
 .order__choose-input:checked + .order__chose-text {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .payment__button {
@@ -6060,7 +6066,7 @@ input[type="submit"] {
   text-align: center;
   position: absolute;
   top: -4px;
-  right: -10px;
+  right: -3px;
   font-size: 11px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -6112,6 +6118,7 @@ input[type="submit"] {
 .cart__button.items_added .cart__button_form .submit__button {
   font-family: 'ralewayregular', sans-serif;
   font-size: 1.125em;
+  width: 100%;
 }
 .cart__button.items_added .cart__button_content {
   padding-top: 5px;
@@ -6715,6 +6722,7 @@ input[type="submit"] {
 .page__pagination .page__pagination_item {
   width: 32px;
   height: 32px;
+  line-height: 32px;
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -6733,7 +6741,6 @@ input[type="submit"] {
   color: rgba(0, 0, 0, 0.6);
   text-decoration: none;
   display: block;
-  line-height: 30px;
 }
 .page__pagination .page__pagination_item.active {
   border: 1px solid #22b983;

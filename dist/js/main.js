@@ -618,13 +618,24 @@ $(function () {
             getStepInputs($step).off("change.cart_order");
         })
     }
+    function getEdit(editClick, $steps){
+        $steps.each(function(ind, step){
+            var $step = $(step);
+
+            if($step.hasClass('active')){
+                return;
+            }
+            $step.addClass('checked');
+        })
+    };
 
     var $cartForm = $('form#cart_order'),
         $cartSteps = $('.cart__order_item', $cartForm),
         $stepNextAction = $cartSteps.find('.order__button_next'),
         $stepPrevAction = $cartSteps.find('.prev__step'),   
         $editAction = $('.cart__step_edit'),
-        $deliveryTabs = $('#delivery__tabs_controls', $cartForm);
+        $deliveryTabs = $('#delivery__tabs_controls', $cartForm),
+        editClick = false;
 
 
     $deliveryTabs.on("tabchange.cart", function(){
@@ -645,17 +656,18 @@ $(function () {
         // Subscribe to input change events (to those who a visible know)
         onStepChange($step);
     })    
-
+ 
 
     $editAction.on("click", function(e){
-        var $currentStep = $(this).parents('.cart__order_item');   
+        var $currentStep = $(this).parents('.cart__order_item');
 
         $cartSteps.removeClass('active');
         $currentStep.removeClass('checked')
-                    .addClass('active');          
+                    .addClass('active');  
 
         offStepChange($cartSteps);    
         onStepChange($currentStep);
+        getEdit(editClick, $cartSteps);
         return false;
     });
 
@@ -682,10 +694,11 @@ $(function () {
         $currentStep.prev()
             .addClass('active')
             .removeClass('checked');
+        editClick = true; 
 
         offStepChange($cartSteps);  
-        onStepChange($currentStep.prev())
-
+        onStepChange($currentStep.prev());
+        getEdit(editClick, $cartSteps);
         return false;
     });
 });
@@ -916,8 +929,7 @@ $("#price__controls li").on('click', function(e){
     }
 
     filtered = !filtered
-    debugger;
-        slick.slideCount > slick.options.slidesToShow ?  $pagination.show() : $pagination.hide(); 
+    slick.slideCount > slick.options.slidesToShow ?  $pagination.show() : $pagination.hide(); 
     
               
     if ($("#price__controls li.active").length) {
@@ -1243,7 +1255,7 @@ $(function (){
 var toggleActiveClassClick= (function () {
 
     var _changeActiveClass = function ($this) {
-        $this.closest(".nav__item, .paginator__catalog_item")
+        $this.closest(".nav__item, .page__pagination_item")
             .addClass("active")
             .siblings()
             .removeClass("active");
@@ -1251,7 +1263,7 @@ var toggleActiveClassClick= (function () {
 
     return {
         init: function () {
-            $(".nav__item, .paginator__catalog_item a").on("click", function (e) {
+            $(".nav__item, .page__pagination_link").on("click", function (e) {
                 e.preventDefault();
                 _changeActiveClass($(this));
             });
