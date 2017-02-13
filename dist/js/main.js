@@ -618,25 +618,59 @@ $(function () {
             getStepInputs($step).off("change.cart_order");
         })
     }
-    function getEdit(editClick, $steps){
-        $steps.each(function(ind, step){
+
+    function showEditButton($steps){
+        $.each($steps, function(i, step){
             var $step = $(step);
-                
+
             if($step.hasClass('active')){
                 return;
             }
             $step.addClass('checked');
-        });
-
+        })
     };
 
-    var $cartForm = $('form#cart_order'),
-        $cartSteps = $('.cart__order_item', $cartForm),
+    function hideEditButton($steps){
+        $.each($steps, function(i, step){
+            var $step = $(step);
+
+            $step.removeClass('checked');
+        })
+    };
+
+    function getCartStepsIndex($cartSteps){
+        var $cartStepsIndex = [];
+
+        $cartSteps.each(function(index, cartStep) {
+            var $cartStep = $(cartStep),
+                cartStepIndex = $cartStep.data("form-step")-1;
+
+            $cartStepsIndex[cartStepIndex] = $cartStep;
+        });
+
+        return $cartStepsIndex;
+    }
+
+    function getStepByIndex(index, $cartSteps){
+        return $cartSteps[index-1];
+    }
+
+    function getPrevSteps(index, $cartSteps){
+        return $cartSteps.slice(0, index-1);
+    }
+
+    function getNextSteps(index, $cartSteps){
+        return $cartSteps.slice(index-1);
+    }
+
+
+    var $cartForm = $('#cart_order'),
+        $cartSteps = $('[data-form-step]', $cartForm),
+        $cartStepsIndex = getCartStepsIndex($cartSteps),
         $stepNextAction = $cartSteps.find('.order__button_next'),
         $stepPrevAction = $cartSteps.find('.prev__step'),   
         $editAction = $('.cart__step_edit'),
-        $deliveryTabs = $('#delivery__tabs_controls', $cartForm),
-        editClick = false;
+        $deliveryTabs = $('#delivery__tabs_controls', $cartForm);
 
 
     $deliveryTabs.on("tabchange.cart", function(){
@@ -657,57 +691,68 @@ $(function () {
         // Subscribe to input change events (to those who a visible know)
         onStepChange($step);
     })    
- 
-
-    $editAction.on("click", function(e){
-        var $currentStep = $(this).parents('.cart__order_item');
+    
+    $editAction.on("click", function (e) {
+        var $currentStep = $(this).parents('[data-form-step]'),
+            currentStepIndex = $currentStep.data('form-step');
 
         $cartSteps.removeClass('active');
-        $currentStep.removeClass('checked')
-                    .addClass('active');  
-
+        $currentStep.addClass('active');
+        
         offStepChange($cartSteps);    
-        onStepChange($currentStep);
-        getEdit(editClick, $cartSteps);
+        onStepChange($currentStep)
+
+        hideEditButton(
+            getNextSteps(currentStepIndex, $cartStepsIndex)
+        );
+
         return false;
     });
-
-
+    
     $stepNextAction.on("click", function (e) {
-        var $currentStep = $(this).parents('.cart__order_item');
-
+        var $currentStep = $(this).parents('[data-form-step]'),
+            currentStepIndex = $currentStep.data('form-step'),
+            $nextStep = getStepByIndex(currentStepIndex+1, $cartStepsIndex);
+       
         if(validateStep($currentStep, true)){
             $cartSteps.removeClass('active');
-            $currentStep.addClass('checked');
-            $currentStep.next().addClass('active').removeClass('checked');
-
+            $nextStep.addClass('active');
+            
             offStepChange($cartSteps);    
-            onStepChange($currentStep.next())
+            onStepChange($nextStep);
         }       
+
+        showEditButton(
+            getPrevSteps(currentStepIndex+1, $cartStepsIndex)
+        );
 
         return false;
     });
 
+
     $stepPrevAction.on("click", function (e) {
-        var $currentStep = $(this).parents('.cart__order_item');
+        var $currentStep = $(this).parents('[data-form-step]'),
+            currentStepIndex = $currentStep.data('form-step'),
+            $prevStep = getStepByIndex(currentStepIndex-1, $cartStepsIndex);
 
-        $cartSteps.removeClass('active');
-        $currentStep.prev()
-            .addClass('active')
-            .removeClass('checked');
-        editClick = true; 
+            $cartSteps.removeClass('active');
+            $prevStep.addClass('active');
+            
+            offStepChange($cartSteps);  
+            onStepChange($prevStep)
+            
+            hideEditButton(
+                getNextSteps(currentStepIndex-1, $cartStepsIndex)
+            );
 
-        offStepChange($cartSteps);  
-        onStepChange($currentStep.prev());
-        getEdit(editClick, $cartSteps);
-        return false;
+            return false;
     });
 });
 
 
 /*-----------header menu width----------*/
 (function(jQuery, window, document, undefined){
-        function setMainNavigationItemsWidth($navigation){
+    function setMainNavigationItemsWidth($navigation){
         var navWidth = $navigation.width(),
             $menuItems = $navigation.find(' > li'),
             itemsWidth = 0;
