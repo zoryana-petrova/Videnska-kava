@@ -3326,34 +3326,7 @@ input[type="submit"] {
   left: -9999px;
 }
 .cart__choose-label .cart__chose-text, .order__choose-label .cart__chose-text {
-  display: inline-block;
-  vertical-align: middle;
-  white-space: nowrap;
   opacity: 0.5;
-}
-.cart__choose-label .cart__chose-text:before, .order__choose-label .cart__chose-text:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-.cart__choose-label-pick-up .cart__chose-text:before {
-  background: url('../images/icons/_misc-sc7b4555b0b.png') 0 -4124px no-repeat;
-  height: 31px;
-  width: 36px;
-}
-
-.cart__choose-label-courier .cart__chose-text:before {
-  background: url('../images/icons/_misc-sc7b4555b0b.png') 0 -2633px no-repeat;
-  height: 25px;
-  width: 45px;
-}
-
-.cart__choose-label-post .cart__chose-text:before {
-  background: url('../images/icons/_misc-sc7b4555b0b.png') 0 -4325px no-repeat;
-  height: 27px;
-  width: 26px;
 }
 
 .form-group:before, .form-group:after {
@@ -3491,10 +3464,6 @@ input[type="submit"] {
   }
 }
 @media screen and (max-width: 530px) {
-  .delivery__tabs_controls {
-    padding: 0 15px;
-  }
-
   .cart__order_item .cart__step_edit {
     display: none;
   }
@@ -3502,9 +3471,9 @@ input[type="submit"] {
     display: none;
   }
 }
-@media screen and (max-width: 605px) {
-  .cart__choose-label .cart__chose-text:before, .order__choose-label .cart__chose-text:before {
-    display: none;
+@media screen and (max-width: 570px) {
+  .cart__third-step .cart__choose-label, .cart__third-step .order__choose-label {
+    width: 100%;
   }
 }
 @media screen and (max-width: 767px) {
@@ -3797,18 +3766,27 @@ input[type="submit"] {
 
 .order__chose_img,
 .order__chose-span {
-  display: inline-block;
+  display: table-cell;
   vertical-align: middle;
+  padding: 5px;
 }
 
 .order__chose_img {
-  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  overflow: hidden;
+}
+.order__chose_img img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
 }
 
 .order__chose-span {
   font-size: 14px;
   line-height: 16px;
-  width: 108px;
 }
 
 .order__choose-input:checked + .order__chose-text {
@@ -3909,7 +3887,8 @@ input[type="submit"] {
 }
 @media screen and (min-width: 1200px) {
   .order__choose-label {
-    width: 17%;
+    width: auto;
+    margin-right: 15px;
   }
 
   .order__details_title {

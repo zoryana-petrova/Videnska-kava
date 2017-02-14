@@ -430,15 +430,21 @@
 															<div id="delivery__tabs_controls" class="delivery__tabs_controls">
 																<label data-class="tab_pick-up" class="cart__choose-label cart__choose-label-pick-up">
 																	<input type="radio" value="Самовывоз" name="delivery" class="cart__choose-input">
-																	<div class="cart__chose-text">Самовывоз</div>
+																	<div class="cart__chose-text">
+																		<div class="order__chose_img"><img src="images/icons/_misc/pick-up.png" alt=""></div><span class="order__chose-span">Самовывоз</span>
+																	</div>
 																</label>
 																<label data-class="tab_courier" class="cart__choose-label cart__choose-label-courier">
 																	<input type="radio" checked value="Курьером" name="delivery" class="cart__choose-input">
-																	<div class="cart__chose-text">Курьером</div>
+																	<div class="cart__chose-text">
+																		<div class="order__chose_img"><img src="images/icons/_misc/courier.png" alt=""></div><span class="order__chose-span">Курьером</span>
+																	</div>
 																</label>
 																<label data-class="tab_post" class="cart__choose-label cart__choose-label-post">
 																	<input type="radio" value="Новой Почтой" name="delivery" class="cart__choose-input">
-																	<div class="cart__chose-text">Новой Почтой</div>
+																	<div class="cart__chose-text">
+																		<div class="order__chose_img"><img src="images/icons/_misc/post.png" alt=""></div><span class="order__chose-span">Новой Почтой</span>
+																	</div>
 																</label>
 															</div>
 														</div>
@@ -446,12 +452,20 @@
 															<ul class="delivery__list">
 																<li class="delivery__item tab__pane pane__tab_pick-up"></li>
 																<li class="delivery__item tab__pane pane__tab_courier active">
-																	<label for="address-contacts" class="col-sm-2 cart__contacts_label">Адрес: <span class="contacts__feedback_span">*</span></label>
-																	<div class="col-sm-7">
-																		<input type="text" id="address-contacts" class="cart__contacts_input form-control">
-																		<div class="cart__delivery-total">Стоимость курьерской доставки по Киеву — 60 грн</div>
+																	<div class="row">
+																		<div class="col-sm-2">
+																			<label for="address-contacts" class="cart__contacts_label">Адрес: <span class="contacts__feedback_span">*</span></label>
+																		</div>
+																		<div class="col-sm-7">
+																			<input type="text" id="address-contacts" class="cart__contacts_input form-control">
+																		</div>
+																		<div class="col-sm-3"><span class="contacts__form-span error-text"></span><span class="contacts__form-span success-text"> </span></div>
 																	</div>
-																	<div class="col-sm-3"><span class="contacts__form-span error-text"></span><span class="contacts__form-span success-text"> </span></div>
+																	<div class="row">
+																		<div class="col-sm-7 col-sm-offset-2">
+																			<div class="cart__delivery-total">Стоимость курьерской доставки по Киеву — 60 грн</div>
+																		</div>
+																	</div>
 																</li>
 																<li class="delivery__item tab__pane pane__tab_post">
 																	<label for="address-contacts" class="col-sm-2 cart__contacts_label">Адрес: <span class="contacts__feedback_span">*</span></label>
@@ -494,7 +508,7 @@
 														<label class="order__choose-label order__choose-transfer">
 															<input type="radio" value="Банковыский перевод" name="payment" class="order__choose-input">
 															<div class="order__chose-text"> 
-																<div class="order__chose_img"><img src="images/icons/_misc/order_transfer.png" alt=""></div><span class="order__chose-span">Банковыский перевод</span>
+																<div class="order__chose_img"><img src="images/icons/_misc/order_transfer.png" alt=""></div><span class="order__chose-span">Банковский перевод</span>
 															</div>
 														</label>
 														<label class="order__choose-label order__choose-invoice">
