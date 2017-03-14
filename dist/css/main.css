@@ -1173,7 +1173,8 @@ a:hover {
   overflow: hidden;
   width: 185px;
   height: 265px;
-  padding: 0 10px;
+  margin: 0 10px;
+  position: relative;
 }
 
 .product__wrapper {
@@ -1189,9 +1190,13 @@ a:hover {
 
 .product__img {
   max-width: 100%;
-  width: auto;
-  height: 100%;
-  margin: 0 auto;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
 }
 
 .start__page .product__description_inner {
