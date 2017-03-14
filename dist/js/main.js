@@ -163,7 +163,6 @@ $(function () {
 
 //dropdown
 $(function () {
-
     var $cartHandler = $('.cart__button'),
         $cartContent = $cartHandler.find('.cart__button_content'),
         $menuHandler = $('.toggle-mnu'),
@@ -198,7 +197,7 @@ $(function () {
   
     $(window).resize(function () {
         var wid = $(window).width();
-        if (wid > 992 &&  $menuContent.is(':hidden')) {
+        if (wid > 992) {
             $menuContent.removeAttr('style');
         }
     });
@@ -817,16 +816,16 @@ $(function () {
 });
 
 /*---------cart animate-------*/
-$(function () {
-    var $cart = $(".cart__button_icon"),
-        animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+// $(function () {
+//     var $cart = $(".cart__button_icon"),
+//         animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
-    $cart.on('added.product', function(){
-        $(this).addClass('animated rubberBand').one(animationEnd, function() {
-            $(this).removeClass('animated rubberBand');
-        });
-    });
-});
+//     $cart.on('added.product', function(){
+//         $(this).addClass('animated rubberBand').one(animationEnd, function() {
+//             $(this).removeClass('animated rubberBand');
+//         });
+//     });
+// });
 
 
 $(function () { 
@@ -1300,24 +1299,17 @@ $(function (){
         $searchForm.removeClass('submit');
     });
 });
-var toggleActiveClassClick= (function () {
+// $(function (){
+//     function addActive(){
+//         // var $this = $(this),
+//             var container = $this.closest(".nav__item");
 
-    var _changeActiveClass = function ($this) {
-        $this.closest(".nav__item, .page__pagination_item")
-            .addClass("active")
-            .siblings()
-            .removeClass("active");
-    };
-
-    return {
-        init: function () {
-            $(".nav__item, .page__pagination_link").on("click", function (e) {
-                e.preventDefault();
-                _changeActiveClass($(this));
-            });
-        }
-    }
-}());
-$(document).ready(function (){
-	toggleActiveClassClick.init();
-});
+//         container.addClass("active")
+//                 .siblings()
+//                 .removeClass("active");
+//     }
+//     $(".nav__item").on("click", function(e) {  
+//         var $this = $(this);  
+//            function addActive($this);
+//     });
+// })

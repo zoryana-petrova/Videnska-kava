@@ -2332,12 +2332,14 @@ input[type="submit"] {
   -webkit-box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.21);
   -moz-box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.21);
   box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.21);
+  display: inline-block;
 }
 .submit__button:hover, .submit__button:active {
   background: #17a66e;
   box-shadow: none;
   padding-top: 12px;
   padding-bottom: 10px;
+  text-decoration: none;
 }
 
 .learn__more_btn {
@@ -3262,6 +3264,7 @@ input[type="submit"] {
   margin-bottom: 0;
   text-align: left;
   font-weight: normal;
+  white-space: nowrap;
 }
 
 .contacts__form-span {
