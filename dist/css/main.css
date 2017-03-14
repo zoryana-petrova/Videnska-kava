@@ -1167,6 +1167,14 @@ a:hover {
 .best__choice .section__header {
   margin-bottom: 35px;
 }
+.best__choice .slider__item_content > a {
+  display: block;
+  float: right;
+  overflow: hidden;
+  width: 185px;
+  height: 265px;
+  padding: 0 10px;
+}
 
 .product__wrapper {
   padding: 0 10px;
@@ -1180,7 +1188,10 @@ a:hover {
 }
 
 .product__img {
-  float: right;
+  max-width: 100%;
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .start__page .product__description_inner {
