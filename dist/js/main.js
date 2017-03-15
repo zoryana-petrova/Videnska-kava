@@ -814,7 +814,25 @@ $(function () {
 $(function () {
     $('.certificates__link').colorbox({rel: 'certificates'});
 });
+/*---------products hover-------*/
+$('.products__item').hover(
+  function(){
+    var $this = $(this);
+    var $img = $this.find('.products__img');
 
+    $img.data('original-width', $img.width());
+    $img.css({width: $img.width()})
+    $img.stop(true,true).animate({ width: Math.round($img.width() * 1.1)}, 250);
+  },
+  function(){
+    var $this = $(this);
+    var $img = $this.find('.products__img');
+
+    $img.stop(true,true).animate({ width: $img.data('original-width')}, 250, function(){
+      $img.css({width: 'auto'})
+    });
+  }
+)
 /*---------cart animate-------*/
 // $(function () {
 //     var $cart = $(".cart__button_icon"),
