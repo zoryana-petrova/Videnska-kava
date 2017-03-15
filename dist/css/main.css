@@ -1435,7 +1435,7 @@ a:hover {
 }
 .best__price .products__item:hover .products__img_wrap {
   height: 184px;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 .best__price .products__img_wrap {
   height: 184px;
@@ -1525,7 +1525,7 @@ a:hover {
   }
   .best__price .products__item .products__img_wrap,
   .best__price .products__item:hover .products__img_wrap {
-    margin-bottom: 10px;
+    margin-bottom: 11px;
     height: 255px;
   }
   .best__price .paginations {
@@ -1705,6 +1705,11 @@ a:hover {
   display: block;
   max-width: 100%;
   height: auto;
+  filter: none;
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
 }
 
 .product__title {
