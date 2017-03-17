@@ -1753,6 +1753,7 @@ a:hover {
   vertical-align: middle;
   box-sizing: border-box;
   max-height: 100%;
+  margin: 0 auto;
 }
 
 .product__title {
