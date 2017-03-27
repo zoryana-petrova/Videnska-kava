@@ -1268,6 +1268,28 @@ $(function () {
     };
     $('.certificates__list').slick(certificatesSlickOpts);
 });
+$( "#slider-item" ).slider({
+    value: 1,
+    min: 1,
+    max: 5,
+    step: 1
+}).each(function() {
+  // Get the options for this slider
+  var max = $(this).slider("option", "max"),
+      min = $(this).slider("option", "min"),
+      vals = max - min,
+  // Get the number of possible values
+      valsArr = ['1', '|', '|', '|', '5'],
+      element;
+
+  // Space out values
+  for (var i = 0; i <= vals; i++) { 
+    element = $('<label>'+valsArr[i]+'</label>').css('left',(i/vals*100)+'%');
+  
+    $( "#slider-item" ).append(element);
+  }
+  
+});
 $(function (){
     var $searchInput = $('#search'),
         $searchButton = $('.search__form-submit_label'),

@@ -1773,6 +1773,7 @@ a:hover {
 
 .product__title {
   text-align: center;
+  min-height: 40px;
   height: 40px;
   overflow: hidden;
   line-height: 20px;
@@ -4080,7 +4081,7 @@ input[type="submit"] {
   }
 
   .sort__item_title {
-    font-size: 0.6875em;
+    display: none;
   }
 }
 @media screen and (min-width: 480px) and (max-width: 767px) {
@@ -4899,7 +4900,6 @@ input[type="submit"] {
 }
 #mm-filter__content .ad-qf-box {
   padding: 40px 0 90px;
-  overflow: hidden !important;
 }
 #mm-filter__content .ad-af-top {
   display: block;
@@ -4908,7 +4908,6 @@ input[type="submit"] {
   width: 100%;
 }
 #mm-filter__content .ad-af-mid {
-  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -5099,6 +5098,7 @@ input[type="submit"] {
   display: block;
   position: relative;
   font-weight: normal;
+  cursor: pointer;
 }
 
 .filter__item {
@@ -5220,6 +5220,14 @@ input[type="submit"] {
   background: url('../images/icons/_misc-s7c9d88db58.png') 0 -3050px no-repeat;
   height: 14px;
   width: 15px;
+}
+
+#slider-item label {
+  position: absolute;
+  width: 20px;
+  margin-left: -10px;
+  text-align: center;
+  margin-top: -14px;
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
@@ -5380,6 +5388,10 @@ input[type="submit"] {
 }
 
 @media screen and (min-width: 320px) and (max-width: 479px) {
+  .footer {
+    padding: 16px 0 70px;
+  }
+
   .footer__menu {
     width: 210px;
     margin: 0 auto;
@@ -5420,6 +5432,10 @@ input[type="submit"] {
   }
 }
 @media screen and (min-width: 480px) and (max-width: 767px) {
+  .footer {
+    padding: 16px 0 70px;
+  }
+
   .footer__menu {
     width: 210px;
     margin: 0 auto;
@@ -5457,6 +5473,10 @@ input[type="submit"] {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer {
+    padding: 16px 0 70px;
+  }
+
   .footer__menu {
     width: 210px;
     margin: 0 auto;
@@ -5466,6 +5486,10 @@ input[type="submit"] {
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
+  .footer {
+    padding: 16px 0 70px;
+  }
+
   .footer__menu {
     width: 210px;
     margin: 0 auto;
@@ -7660,9 +7684,6 @@ input[type="submit"] {
   }
   .products__characteristics_list .products__options_value {
     width: 100%;
-  }
-  .products__characteristics_list .products__rating_value {
-    display: none;
   }
 
   .add__review_btn {
