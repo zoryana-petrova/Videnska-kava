@@ -815,20 +815,55 @@ $(function () {
 });
 /*---------products hover-------*/
 // $('.products__item').hover(
+//     function(){
+//         var $this = $(this);
+//         var $img = $this.find('.products__img');
+
+//         $img.data('original-width', $img.width());
+
+//         $img.effect("scale", {percent: 110}, 150);
+//     },
+//     function(){
+//         var $this = $(this);
+//         var $img = $this.find('.products__img');
+
+//         $img.stop(true,true).animate({ width: $img.data('original-width')}, 150, function(){
+//         $img.css({width: 'auto',
+//                 height   : 'auto',
+//                 left: "0",
+//                 top: "0",
+//                 margin: "0 auto"
+//             })
+//         });
+//     }
+    
+// );
+
+
+
+
+// $('.products__item').hover(
 //   function(){
 //     var $this = $(this);
 //     var $img = $this.find('.products__img');
 
 //     $img.data('original-width', $img.width());
-//     $img.css({width: $img.width()});
-//     $img.stop(true,true).animate({width: Math.round($img.width() * 1.1)}, 150);
+//     $img.css({width: $img.width(), height:  $img.height()})
+//     $img.stop(true,true).animate({ 
+//         width: Math.round($img.width() * 1.1),
+//         height: Math.round($img.height() * 1.1),
+//         top              : "-=10"
+//     }, 150);
 //   },
 //   function(){
 //     var $this = $(this);
 //     var $img = $this.find('.products__img');
 
 //     $img.stop(true,true).animate({ width: $img.data('original-width')}, 150, function(){
-//       $img.css({width: 'auto'})
+//     $img.css({width: 'auto',
+//     height   : "auto",
+//     top              : "+=10"
+//     })
 //     });
 //   }
 // )
@@ -1268,28 +1303,81 @@ $(function () {
     };
     $('.certificates__list').slick(certificatesSlickOpts);
 });
-$( "#slider-item" ).slider({
-    value: 1,
-    min: 1,
-    max: 5,
-    step: 1
-}).each(function() {
-  // Get the options for this slider
-  var max = $(this).slider("option", "max"),
-      min = $(this).slider("option", "min"),
-      vals = max - min,
-  // Get the number of possible values
-      valsArr = ['1', '|', '|', '|', '5'],
-      element;
+var sliderWidgetRuller = (function(){
 
-  // Space out values
-  for (var i = 0; i <= vals; i++) { 
-    element = $('<label>'+valsArr[i]+'</label>').css('left',(i/vals*100)+'%');
-  
-    $( "#slider-item" ).append(element);
-  }
-  
+    var $sliders = null;
+    var _changedColor = function(min, max, label){
+        
+        label.removeClass('active');
+
+        return label.filter(function(index){
+          var sliderValue = $(this).data('slider-value');
+
+          if (sliderValue >= min && sliderValue <= max){
+            return true;
+          }
+        }).addClass('active');
+      }
+
+    return {
+        init: function($elems){
+            // Store all initialized sliders
+            $sliders = $elems;
+
+            $sliders.each(function(){
+                var $this = $(this),
+                    min = parseInt($this.data("min")),
+                    max = parseInt($this.data("max"));
+
+                $this.slider({
+                    range: true,
+                    min: min,
+                    max: max,
+                    values: [min, max],
+                    step: 1,
+                    change: function (event, ui) {
+                      var minVal =  $this.slider('values', 0),
+                          maxVal =  $this.slider('values', 1),
+                          label =  $this.find('label');
+
+                      _changedColor(minVal, maxVal, label);
+                    }
+                }).each(function() {
+                    var $this = $(this),
+                        max =  $this.slider("option", "max"),
+                        min =  $this.slider("option", "min"),
+                        vals = max - min,
+                        elem,
+                        minVal = $(this).slider('values', 0),
+                        maxVal = $(this).slider('values', 1),
+                        label,
+                        labelsCreated = 0;   
+
+                    for (var i = min; i <= max; i++) { 
+                      elem = $('<label>'+i+'</label>').css('left',( labelsCreated/vals*100)+'%');
+                      elem.data('slider-value', i);
+                      $this.append(elem);
+
+                      labelsCreated++;
+                    };
+
+                    label = $this.find('label');
+                    _changedColor(minVal, maxVal, label);
+                })
+            })
+        }  
+    }
+}());
+
+$(document).ready(function (){
+       /* Init Price Slider */
+    var $sliders = $(".slider-item"); 
+    if ($sliders.length){
+        sliderWidgetRuller.init($sliders);
+    }
 });
+
+
 $(function (){
     var $searchInput = $('#search'),
         $searchButton = $('.search__form-submit_label'),
