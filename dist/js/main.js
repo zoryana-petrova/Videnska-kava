@@ -1348,8 +1348,8 @@ var sliderWidgetRuller = (function(){
                         min =  $this.slider("option", "min"),
                         vals = max - min,
                         elem,
-                        minVal = $(this).slider('values', 0),
-                        maxVal = $(this).slider('values', 1),
+                        minVal = $this.slider('values', 0),
+                        maxVal = $this.slider('values', 1),
                         label,
                         labelsCreated = 0;   
 
@@ -1370,7 +1370,7 @@ var sliderWidgetRuller = (function(){
 }());
 
 $(document).ready(function (){
-       /* Init Price Slider */
+       /* Init Slider */
     var $sliders = $(".slider-item"); 
     if ($sliders.length){
         sliderWidgetRuller.init($sliders);
