@@ -5249,6 +5249,7 @@ input[type="submit"] {
   font-family: 'robotoregular', sans-serif;
   color: rgba(48, 44, 39, 0.5);
   font-size: 16px;
+  cursor: pointer;
 }
 .slider-item label.active {
   color: #302c27;

@@ -1330,18 +1330,23 @@ var sliderWidgetRuller = (function(){
                     max = parseInt($this.data("max"));
 
                 $this.slider({
-                    range:  false,
-                    min: min,
-                    max: max,
-                    value: min,
-                    step: 1,
-                    change: function (event, ui) {
-                      var minVal =  $this.slider('values', 0),
-                          maxVal =  $this.slider('values', 1),
-                          label =  $this.find('label');
+                  range:  false,
+                  min: min,
+                  max: max,
+                  value: min,
+                  step: 1,
+                  change: function (event, ui) {
+                    var minVal =  $this.slider('values', 0),
+                        maxVal =  $this.slider('values', 1),
+                        label =  $this.find('label'),
+                        handle = $this.find($(".ui-slider-handle"));
 
-                      _changedColor(minVal, maxVal, label);
-                    }
+                      label.click(function() {
+                        handle.show();
+                      });
+                     
+                    _changedColor(minVal, maxVal, label);
+                  }
                 }).each(function() {
                     var $this = $(this),
                         max =  $this.slider("option", "max"),
@@ -1351,8 +1356,10 @@ var sliderWidgetRuller = (function(){
                         minVal = $this.slider('values', 0),
                         maxVal = $this.slider('values', 1),
                         label,
-                        labelsCreated = 0;   
+                        labelsCreated = 0,
+                        handle = $this.find($(".ui-slider-handle"));
 
+                    handle.hide();
                     for (var i = min; i <= max; i++) { 
                       elem = $('<label>'+i+'</label>').css('left',( labelsCreated/vals*100)+'%');
                       elem.data('slider-value', i);
@@ -1360,9 +1367,6 @@ var sliderWidgetRuller = (function(){
 
                       labelsCreated++;
                     };
-
-                    label = $this.find('label');
-                    _changedColor(minVal, maxVal, label);
                 })
             })
         }  
