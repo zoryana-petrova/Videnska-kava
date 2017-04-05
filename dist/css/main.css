@@ -5240,6 +5240,10 @@ input[type="submit"] {
   margin-bottom: 20px;
 }
 
+.slider-item {
+  cursor: pointer;
+}
+
 .slider-item label {
   position: absolute;
   width: 20px;
