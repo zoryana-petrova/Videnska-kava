@@ -1330,10 +1330,10 @@ var sliderWidgetRuller = (function(){
                     max = parseInt($this.data("max"));
 
                 $this.slider({
-                    range: true,
+                    range:  false,
                     min: min,
                     max: max,
-                    values: [min, max],
+                    value: min,
                     step: 1,
                     change: function (event, ui) {
                       var minVal =  $this.slider('values', 0),
@@ -1370,10 +1370,10 @@ var sliderWidgetRuller = (function(){
 }());
 
 $(document).ready(function (){
-       /* Init Slider */
+    /* Init Slider */
     var $sliders = $(".slider-item"); 
     if ($sliders.length){
-        sliderWidgetRuller.init($sliders);
+      sliderWidgetRuller.init($sliders);
     }
 });
 
