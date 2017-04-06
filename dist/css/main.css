@@ -1753,11 +1753,11 @@ a:hover {
   -webkit-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  -webkit-transition: max-height 0.3s ease-out;
-  -moz-transition: max-height 0.3s ease-out;
-  -ms-transition: max-height 0.3s ease-out;
-  -o-transition: max-height 0.3s ease-out;
-  transition: max-height 0.3s ease-out;
+  -webkit-transition: max-height 0.2s ease-out;
+  -moz-transition: max-height 0.2s ease-out;
+  -ms-transition: max-height 0.2s ease-out;
+  -o-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
   vertical-align: middle;
   box-sizing: border-box;
   margin: 0 auto;
