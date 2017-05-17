@@ -4589,6 +4589,7 @@ input[type="submit"] {
   position: absolute;
   max-height: inherit;
   display: inline-block !important;
+  max-width: 100%;
 }
 
 .product-photo,
