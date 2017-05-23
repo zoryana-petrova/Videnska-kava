@@ -279,22 +279,17 @@ $(window).on('scroll', function () {
 
     var scrollTop = $(window).scrollTop();
     if(scrollTop >= headerTopHeight){
+        $header.addClass('scroll');
         $topMenu.hide();
         $headerContent.hide();
     } else{
+        $header.removeClass('scroll');
         $topMenu.show();
         $headerContent.show();
     }
-    
-    if (window.innerWidth < 992) {
+    if(window.innerWidth < 992) {
         $header.removeClass('scroll')
         return true   
-    }
-
-    if(scrollTop >= headerTopHeight){
-        $header.addClass('scroll')
-    } else{
-        $header.removeClass('scroll')
     }
 });
 

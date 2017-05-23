@@ -6004,6 +6004,10 @@ input[type="submit"] {
   border-left: 1px solid #000000;
 }
 
+.header__bottom {
+  -webkit-backface-visibility: hidden;
+  background: transparent;
+}
 .header__bottom .site__info {
   padding: 0 15px;
 }
@@ -6583,7 +6587,6 @@ input[type="submit"] {
     top: 0;
     width: 100%;
     z-index: 9997 !important;
-    position: fixed;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -6600,7 +6603,6 @@ input[type="submit"] {
     top: 0;
     width: 100%;
     z-index: 9997 !important;
-    position: fixed;
   }
 }
 .login__form_wrap, .cabinet__form_wrap {
