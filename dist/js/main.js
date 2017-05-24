@@ -46,15 +46,15 @@ $(function () {
         $topMenuContainer = $('.nav__top');
 
 
-	function dropdownHandler($element, $list){
-		var wid = $(window).width();
+    function dropdownHandler($element, $list){
+        var wid = window.innerWidth;
 
-		if(wid < 992 && !$element.hasClass('opened')){
+        if(wid < 992 && !$element.hasClass('opened')){
             return false;
         }
-		$element.toggleClass('opened');
-		$list.fadeToggle("300");
-	};
+        $element.toggleClass('opened');
+        $list.fadeToggle("300");
+    };
 
     $phoneHandler.on('click', function (evt) {
     	var $element = $phoneHandler;
@@ -86,7 +86,8 @@ $(function () {
 		var $element = $phoneHandlerFooter,
 			$list = $contactsListFotter;
 
-		dropdownHandler($element, $list);
+		$element.toggleClass('opened');
+        $list.fadeToggle("300");
 		evt.stopPropagation();
     });
 
@@ -116,7 +117,7 @@ $(function () {
 
 	$(window).resize(function () {
 		var wid = $(window).width();
-		if(wid < 992 &&   $phoneHandler.is(':hidden')){
+		if(wid < 992 && $phoneHandler.is(':hidden')){
 			$phoneHandler.removeClass('opened');     
 			$list.removeAttr('style');     	
 		}
