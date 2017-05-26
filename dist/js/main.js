@@ -248,6 +248,7 @@ $(function(){
     $(".dvantages__item_text, .atrticles__item_text").dotdotdot();
 });
 
+
 // Header animate
 var 
     $body = $("body"),
